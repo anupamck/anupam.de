@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<head>
+  <link type="text/css" rel="stylesheet" href="../../style.css">
+  <meta charset="utf-8">
+  <title>RPA Articles | Anupam Krishnamurthy</title>
+</head>
+
+<body>
+  <h1>3 lessons for an RPA developer from the world’s largest software development conference</h1>
+  <h5>July 5, 2021</h5>
+  <p>
+    Last week, I had the privilege of attending the WeAreDevelopers World Congress
+    '21, a conference where I watched wide-eyed when speakers such as Tim Berners-Lee
+    and Jeremy Keith doled out a lifetime's worth of inspiration.
+  </p>
+  <p>
+    Yet, as an RPA developer, I was constantly thinking about what I can directly apply
+    to my existing skill set from this conference. Here are three such takeaways.
+   </p>
+  <ol>
+    <h3><li>Good design supports automated testing</li></h3>
+    <p>
+      I have often seen RPA teams not spending time on writing automated tests. They claim
+      that it is too hard, and that it is a waste of their time. Too often, the only testing
+      that an RPA process goes through before production is ad-hoc manual tests during development.
+    </p>
+    <p>
+      <img src="Images/CowboyCoder.jfif" alt="Man wearing a cowboy hat, who is nostalgic of his
+      badly written code">
+    <p>
+      But here’s the bitter truth. If you find it hard to write tests, it is mostly because
+      your code is crappy. It likely has too many tightly coupled dependencies.
+    </p>
+    <p>
+      Let me illustrate what I mean with an example. Suppose you have one workflow which
+      <ul>
+        <li>Launches an application</li>
+        <li>Logs into it</li>
+        <li>Navigates to a particular screen</li>
+      </ul>
+    </p>
+    <p>
+      It is difficult to write tests for this workflow because it produces 3 distinct outcomes
+      that are dependent on each other – launch, log-in and navigation. To make your code more
+      testable, you need to have separate workflows for each of those actions.
+    </p>
+    <p>
+      A hat-tip to <a target="_blank" href="https://www.linkedin.com/in/goloroden/">Golo Roden</a> for this
+      great reminder in his session: <a href="https://www.youtube.com/watch?v=cSJ-X3TbQ1c&t=9699s">How not
+      to test.</a>
+    </p>
+    <p>
+      <img src="Images/GoloRoden.png" alt="Bearded man speaking into a large microphone">
+    </p>
+      <h3><li>A user-friendly method to define acceptance tests</li></h3>
+    <p>
+      Your process needs to go into User Acceptance Testing (UAT) and you need a set of tests
+      from the business users. You send them your UAT Excel template and ask them to populate
+      it with test cases. When you receive it, you simply cannot comprehend what needs to be
+      tested.
+    </p>
+    <p>
+      On a different process that another developer in your team has automated, you receive
+      a set of integration tests to test the process. Even though you have her test cases, you
+      are unable to comprehend how they are structured and how they need to be run.
+    </p>
+    <p>
+      How often have you faced these situations? Fortunately, there is a way to break this vicious
+      cycle of incomprehensible test definitions: Given – When – Then.
+    </p>
+    <p>
+      Does this sound familiar? UiPath’s Test Automation suite already uses this structure. The
+      advantage of using the Given – When – Then schema is that you can define your tests in a
+      language that everybody understands.
+    </p>
+    <p><ul>
+      <li>The <b>Given</b> part describes the initial state that is required for your test to run.
+        These are the preconditions to execute the system.</li>
+      <li>The <b>When</b> part describes the behaviour of your process.</li>
+      <li>The Then part describes the expected change.</li>
+    </ul></p>
+    <p>
+      Here’s a simple example, to test a logout functionality:<br>
+      <b>Given:</b><br>
+      ﻿The bot user is logged into the system.<br>
+      <b>When:</b><br>
+      The bot clicks on the logout button.<br>
+    <b>Then:</b><br>
+      The bot user receives a message that he / she is logged out.<br>
+    </p>
+    <p>
+      Here’s another more detailed example:<br>
+      <b>Given:</b><br>
+      The bot user is logged into the Vehicle Records system<br>
+      <b>When:</b><br>
+      The bot queries Vehicle number ‘123456’<br>
+      <b>Then:</b><br>
+      The bot receives a message that the vehicle wasn’t found<br>
+      AND<br>
+      The bot sends an email to the business user with the error message ‘123456 – Vehicle Not
+      Found’ to the process owner
+    </p>
+    <p>
+      You could use this format for specifying all acceptance tests – integration tests within
+      the development team or UATs, where the end-user is involved. Read more about
+      Given-When-Then here: <a href="https://martinfowler.com/bliki/GivenWhenThen.html">
+      https://martinfowler.com/bliki/GivenWhenThen.html</a>.
+    </p>
+    <p>
+      A hat tip to <a href="https://www.linkedin.com/in/christian-k%C3%BChn-92a312198/">Christian
+      Kühn</a> for inspiring this idea from his session <a
+      href="https://www.youtube.com/watch?v=cSJ-X3TbQ1c&t=12625s">Continuous testing - run automated
+      tests for every change!</a>
+    </p>
+    <p>
+      <img src="Images/ChristianKuehn.png" alt="A thumbnail of a spectacled man beside a slide">
+    </p>
+    <p>
+
+
+
+  </ol>
+
+
+  <h4><a href="../../index.html">Back to home</a></h4>
+</body>
+</html>
