@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <h1>3 lessons for an RPA developer from the world’s largest software development conference</h1>
+  <h1>3 lessons from the world’s largest software development conference</h1>
   <h5>July 5, 2021</h5>
   <p>
     Last week, I had the privilege of attending the WeAreDevelopers World Congress
@@ -17,6 +17,7 @@
     Yet, as an RPA developer, I was constantly thinking about what I can directly apply
     to my existing skill set from this conference. Here are three such takeaways.
    </p>
+
   <ol>
     <h3><li>Good design supports automated testing</li></h3>
     <p>
@@ -52,7 +53,8 @@
     <p>
       <img src="Images/GoloRoden.png" alt="Bearded man speaking into a large microphone">
     </p>
-      <h3><li>A user-friendly method to define acceptance tests</li></h3>
+
+    <h3><li>A user-friendly method to define acceptance tests</li></h3>
     <p>
       Your process needs to go into User Acceptance Testing (UAT) and you need a set of tests
       from the business users. You send them your UAT Excel template and ask them to populate
@@ -96,32 +98,81 @@
       The bot queries Vehicle number ‘123456’<br>
       <b>Then:</b><br>
       The bot receives a message that the vehicle wasn’t found<br>
-      AND<br>
+      <b>AND</b><br>
       The bot sends an email to the business user with the error message ‘123456 – Vehicle Not
       Found’ to the process owner
     </p>
     <p>
       You could use this format for specifying all acceptance tests – integration tests within
       the development team or UATs, where the end-user is involved. Read more about
-      Given-When-Then here: <a href="https://martinfowler.com/bliki/GivenWhenThen.html">
+      Given-When-Then here: <a target="_blank" href="https://martinfowler.com/bliki/GivenWhenThen.html">
       https://martinfowler.com/bliki/GivenWhenThen.html</a>.
     </p>
     <p>
       A hat tip to <a href="https://www.linkedin.com/in/christian-k%C3%BChn-92a312198/">Christian
       Kühn</a> for inspiring this idea from his session <a
-      href="https://www.youtube.com/watch?v=cSJ-X3TbQ1c&t=12625s">Continuous testing - run automated
+      target="_blank" href="https://www.youtube.com/watch?v=cSJ-X3TbQ1c&t=12625s">Continuous testing - run automated
       tests for every change!</a>
     </p>
     <p>
       <img src="Images/ChristianKuehn.png" alt="A thumbnail of a spectacled man beside a slide">
     </p>
+
+    <h3><li>DevOps is the key to scaling RPA</li></h3>
     <p>
-
-
-
+      How many arguments have you gotten into with your infrastructure engineer on the following topics:
+      <ul>
+        <li>Access to process logs</li>
+        <li>Logging detail and availability</li>
+        <li>Orchestrator access rights</li>
+        <li>Timely deployment of releases into production</li>
+        <li>What is at fault - code or the infrastructure?</li>
+      </ul>
+      Among several others?
+    </p>
+    <p>
+      These arguments stem from a lack of mutual understanding between the development and the operations
+      teams. Developers often feel like the ops folks are always putting hurdles in their way of changing
+      and fixing code, while the ops folks often accuse the developers of shipping poor quality code that
+      keeps breaking the production environment. In this heated battle, the customer is caught in the
+      cross-fire.
+    </p>
+    <p>
+      The larger your RPA practice, the more frequent (and bitter) these arguments become. An elegant
+      solution from the software development world to these problems is to institute DevOps practices.
+    </p>
+    <p>
+        DevOps is a term you often hear thrown about. Its primary aim is simple - frictionless cross-team
+        collaboration between the folks who create code (business analysts, developers) and those who run
+        it in production environments (process monitoring, infrastructure engineers). I believe that
+        adopting a DevOps mindset is the key to successfully scaling an RPA program.
+    </p>
+    <p>
+        In his talk Journey from Developer to DevOps, Alireza Chegini outlined two principles for successful
+        DevOps collaboration:
+        <ol>
+          <li>The development team must build empathy for whatever happens to their code after they ship it
+            to production. They must be curious and learn about a day-in-the-life of the people who run their
+            code.</li>
+          <li>Operations must make it easy for development to understand the impact of their code / process
+            design changes. This means greater transparency into the production environment
+            (through read-only access).</li>
+        </ol>
+    </p>
+    <p>
+      <img src="Images/Alireza.png" alt="A screengrab with three folks saying goodbye">
+    </p>
+    <p>
+      Every experienced RPA developer realizes that the boundaries between RPA and software development
+      are a lot thinner than they are made out to be. Besides, software development has solved several
+      problems that we currently face in enterprise RPA, through clean coding standards, rigorous code
+      reviews, continuous integration, automated testing etc.
+    </p>
+    <p>
+      After an exciting week full of learning, I am eager to integrate what I have learnt at this year’s
+      WeAreDevelopers conference into my day-to-day work, even as I look forward to next year’s event.
+    </p>
   </ol>
-
-
   <h4><a href="../../index.html">Back to home</a></h4>
 </body>
 </html>

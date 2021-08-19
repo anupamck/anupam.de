@@ -1,6 +1,63 @@
+/*
+@font-face{
+    font-family: 'naftera_display_solid';
+    src: url('Fonts/naftera_display_solid-webfont.woff2') format('woff2'),
+         url('Fonts/naftera_display_solid-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+
+/* @font-face{
+    font-family: 'bogart-semibold';
+    src: url('Fonts/bogart-semibold-webfont.woff2') format('woff2'),
+         url('Fonts/bogart-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+/* @font-face{
+    font-family: 'cunia';
+    src: url('Fonts/cunia.ttf');
+} */
+
+/*
+@font-face{
+    font-family: 'engry';
+    src: url('Fonts/engry.otf');
+}
+*/
+
+@font-face{
+    font-family: 'roman_sd';
+    src: url('Fonts/Roman_SD.ttf');
+}
+
+/* @font-face{
+    font-family: 'laborUnion';
+    src: url('Fonts/LaborUnion-Regular.otf');
+} */
+
+@font-face{
+    font-family: 'tiffanyGothic';
+    src: url('Fonts/TiffanyGothicCC.otf');
+}
+
 body{
-    font-size: medium;
-    margin-left: 5%;
-    margin-right: 5%;
-    line-height: 1.6em;
+    max-width: 40em;
+    margin: auto;
+    padding: 5px;
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    font-size: large;
+    line-height: 1.8em;
+    background-color: #f8ffee;
+}
+
+h1{
+  font-family: roman_sd, sans-serif;
+  color: #000080;
+}
+
+img{
+  max-width: 100%;
 }
