@@ -1,62 +1,120 @@
-/*
-@font-face{
-    font-family: 'naftera_display_solid';
-    src: url('Fonts/naftera_display_solid-webfont.woff2') format('woff2'),
-         url('Fonts/naftera_display_solid-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-*/
-
-/* @font-face{
-    font-family: 'bogart-semibold';
-    src: url('Fonts/bogart-semibold-webfont.woff2') format('woff2'),
-         url('Fonts/bogart-semibold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-} */
-
-/* @font-face{
-    font-family: 'cunia';
-    src: url('Fonts/cunia.ttf');
-} */
-
-/*
-@font-face{
-    font-family: 'engry';
-    src: url('Fonts/engry.otf');
-}
-*/
-
-@font-face{
-    font-family: 'roman_sd';
-    src: url('Fonts/Roman_SD.ttf');
-}
-
-/* @font-face{
-    font-family: 'laborUnion';
-    src: url('Fonts/LaborUnion-Regular.otf');
-} */
-
-@font-face{
-    font-family: 'tiffanyGothic';
-    src: url('Fonts/TiffanyGothicCC.otf');
-}
-
-body{
+body {
     max-width: 40em;
     margin: auto;
-    padding: 5px;
     font-family: "Trebuchet MS", Tahoma, sans-serif;
     font-size: large;
     line-height: 1.8em;
+    padding-bottom: 2em;
 }
 
-h1{
-  font-family: roman_sd, sans-serif;
-  color: #000080;
+h1, h2, h3 {
+  font-family: sohne, sans-serif;
+  font-weight: normal;
+  color: #000000;
 }
 
-img{
+h3 {
+  text-decoration: underline;
+}
+
+h4 {
+  margin: 0px;
+}
+
+a {
+  color: #FF7700;
+  font-weight: bold;
+}
+
+a:link, a:visited {
+  color: #189ad3;
+  text-decoration: none;
+  border-bottom: none;
+  font-weight: normal;
+}
+
+
+section.main img#profilePic, .projectPic {
+  width: 40em;
+  text-align: center;
   max-width: 100%;
+}
+
+.projectInfo {
+  color: #000000;
+}
+
+.projectDate {
+  float: right;
+}
+
+.projectPic {
+  max-width: 60%;
+  display: block;
+  margin: auto;
+  padding: 10px;
+}
+
+.tableRow {
+  display: table-row;
+}
+
+section#sidebar {
+  display: table-cell;
+  vertical-align: top;
+}
+
+nav {
+  padding-right: 30px;
+  position: sticky;
+  top: 10px;
+}
+
+nav a{
+    display: block;
+}
+
+section#main {
+  display:table-cell;
+}
+
+section.project {
+  margin-bottom: 1.5em;
+  padding:20px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+
+section.datedRow p {
+  display:table-cell;
+  padding:5px;
+  width: 40em;
+}
+
+ {
+  display:table-cell;
+  padding:5px;
+  width: 40em;
+}
+
+section.datedRow .tableRow p:nth-child(2) {
+  text-align:right;
+  width: 7em;
+}
+
+/* .credits {
+  font-size: 0.7em;
+  line-height: 1.5em;
+}
+*/
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+span.verse {
+  font-style: italic;
+}
+
+span.heading {
+  font-weight: bold;
 }
