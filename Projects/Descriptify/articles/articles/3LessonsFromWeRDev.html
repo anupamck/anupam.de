@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../../../../style.css">
+    <link type="text/css" rel="stylesheet" href="../../style_Descriptify.css">
+    <meta charset="utf-8">
+    <title>Descriptify | Articles</title>
+  </head>
+  <body>
+    <a href="../../descriptify.html"><h1>Descriptify</h1></a>
+    <div class="tableRow">
+      <section id="sidebar">
+        <nav>
+          <a href="../../descriptify.html">home</a>
+          <a href="../articles.html">articles</a>
+          <a href="../../tutorials/tutorials.html">tutorials</a>
+        </nav>
+      </section>
+      <section class="main">
+        <h1>3 lessons from the world’s largest software development conference</h1>
+        <p>
+          Last week, I had the privilege of attending the WeAreDevelopers World Congress
+          '21, a conference where I watched wide-eyed when speakers such as Tim Berners-Lee
+          and Jeremy Keith doled out a lifetime's worth of inspiration.
+        </p>
+        <p>
+          Yet, as an RPA developer, I was constantly thinking about what I can directly apply
+          to my existing skill set from this conference. Here are three such takeaways.
+         </p>
+
+        <ol class="chapters">
+          <h3><li>Good design supports automated testing</li></h3>
+          <p>
+            I have often seen RPA teams not spending time on writing automated tests. They claim
+            that it is too hard, and that it is a waste of their time. Too often, the only testing
+            that an RPA process goes through before production is ad-hoc manual tests during development.
+          </p>
+          <p>
+            <img src="../../images/CowboyCoder.jfif" alt="Man wearing a cowboy hat, who is nostalgic of his
+            badly written code">
+          <p>
+            But here’s the bitter truth. If you find it hard to write tests, it is mostly because
+            your code is crappy. It likely has too many tightly coupled dependencies.
+          </p>
+          <p>
+            Let me illustrate what I mean with an example. Suppose you have one workflow which
+            <ul>
+              <li>Launches an application</li>
+              <li>Logs into it</li>
+              <li>Navigates to a particular screen</li>
+            </ul>
+          </p>
+          <p>
+            It is difficult to write tests for this workflow because it produces 3 distinct outcomes
+            that are dependent on each other – launch, log-in and navigation. To make your code more
+            testable, you need to have separate workflows for each of those actions.
+          </p>
+          <p>
+            A hat-tip to <a target="_blank" href="https://www.linkedin.com/in/goloroden/">Golo Roden</a> for this
+            great reminder in his session: <a href="https://www.youtube.com/watch?v=cSJ-X3TbQ1c&t=9699s">How not
+            to test.</a>
+          </p>
+          <p>
+            <img src="../../images/GoloRoden.png" alt="Bearded man speaking into a large microphone">
+          </p>
+
+          <h3><li>A user-friendly method to define acceptance tests</li></h3>
+          <p>
+            Your process needs to go into User Acceptance Testing (UAT) and you need a set of tests
+            from the business users. You send them your UAT Excel template and ask them to populate
+            it with test cases. When you receive it, you simply cannot comprehend what needs to be
+            tested.
+          </p>
+          <p>
+            On a different process that another developer in your team has automated, you receive
+            a set of integration tests to test the process. Even though you have her test cases, you
+            are unable to comprehend how they are structured and how they need to be run.
+          </p>
+          <p>
+            How often have you faced these situations? Fortunately, there is a way to break this vicious
+            cycle of incomprehensible test definitions: Given – When – Then.
+          </p>
+          <p>
+            Does this sound familiar? UiPath’s Test Automation suite already uses this structure. The
+            advantage of using the Given – When – Then schema is that you can define your tests in a
+            language that everybody understands.
+          </p>
+          <p><ul>
+            <li>The <b>Given</b> part describes the initial state that is required for your test to run.
+              These are the preconditions to execute the system.</li>
+            <li>The <b>When</b> part describes the behaviour of your process.</li>
+            <li>The Then part describes the expected change.</li>
+          </ul></p>
+          <p>
+            Here’s a simple example, to test a logout functionality:<br>
+            <p><b>Given:</b><br>
+              ﻿The bot user is logged into the system.
+            </p>
+            <p>
+              <b>When:</b><br>
+              The bot clicks on the logout button.<br>
+            </p>
+            <p><b>Then:</b><br>
+              The bot user receives a message that he / she is logged out.<br>
+            </p>
+          <p>
+            Here’s another more detailed example:<br>
+            <p>
+              <b>Given:</b><br>
+            The bot user is logged into the Vehicle Records system<br>
+            </p>
+            <p>
+              <b>When:</b><br>
+              The bot queries Vehicle number ‘123456’<br>
+            </p>
+            <p>
+              <b>Then:</b><br>
+              The bot receives a message that the vehicle wasn’t found<br>
+              <b>AND</b><br>
+              The bot sends an email to the business user with the error message ‘123456 – Vehicle Not
+              Found’ to the process owner
+            </p>
+          </p>
+          <p>
+            You could use this format for specifying all acceptance tests – integration tests within
+            the development team or UATs, where the end-user is involved. Read more about
+            Given-When-Then here: <a target="_blank" href="https://martinfowler.com/bliki/GivenWhenThen.html">
+            https://martinfowler.com/bliki/GivenWhenThen.html</a>.
+          </p>
+          <p>
+            A hat tip to <a href="https://www.linkedin.com/in/christian-k%C3%BChn-92a312198/">Christian
+            Kühn</a> for inspiring this idea from his session <a
+            target="_blank" href="https://www.youtube.com/watch?v=cSJ-X3TbQ1c&t=12625s">Continuous testing - run automated
+            tests for every change!</a>
+          </p>
+          <p>
+            <img src="../../images/ChristianKuehn.png" alt="A thumbnail of a spectacled man beside a slide">
+          </p>
+
+          <h3><li>DevOps is the key to scaling RPA</li></h3>
+          <p>
+            How many arguments have you gotten into with your infrastructure engineer on the following topics:
+            <ul>
+              <li>Access to process logs</li>
+              <li>Logging detail and availability</li>
+              <li>Orchestrator access rights</li>
+              <li>Timely deployment of releases into production</li>
+              <li>What is at fault - code or the infrastructure?</li>
+            </ul>
+            Among several others?
+          </p>
+          <p>
+            These arguments stem from a lack of mutual understanding between the development and the operations
+            teams. Developers often feel like the ops folks are always putting hurdles in their way of changing
+            and fixing code, while the ops folks often accuse the developers of shipping poor quality code that
+            keeps breaking the production environment. In this heated battle, the customer is caught in the
+            cross-fire.
+          </p>
+          <p>
+            The larger your RPA practice, the more frequent (and bitter) these arguments become. An elegant
+            solution from the software development world to these problems is to institute DevOps practices.
+          </p>
+          <p>
+              DevOps is a term you often hear thrown about. Its primary aim is simple - frictionless cross-team
+              collaboration between the folks who create code (business analysts, developers) and those who run
+              it in production environments (process monitoring, infrastructure engineers). I believe that
+              adopting a DevOps mindset is the key to successfully scaling an RPA program.
+          </p>
+          <p>
+              In his talk Journey from Developer to DevOps, Alireza Chegini outlined two principles for successful
+              DevOps collaboration:
+              <ol class="roman">
+                <li>The development team must build empathy for whatever happens to their code after they ship it
+                  to production. They must be curious and learn about a day-in-the-life of the people who run their
+                  code.</li>
+                <li>Operations must make it easy for development to understand the impact of their code / process
+                  design changes. This means greater transparency into the production environment
+                  (through read-only access).</li>
+              </ol>
+          </p>
+          <p>
+            <img src="../../images/Alireza.png" alt="A screengrab with three folks saying goodbye">
+          </p>
+          <p>
+            Every experienced RPA developer realizes that the boundaries between RPA and software development
+            are a lot thinner than they are made out to be. Besides, software development has solved several
+            problems that we currently face in enterprise RPA, through clean coding standards, rigorous code
+            reviews, continuous integration, automated testing etc.
+          </p>
+        </ol>
+        <p>
+          After an exciting week full of learning, I am eager to integrate what I have learnt at this year’s
+          WeAreDevelopers conference into my day-to-day work, even as I look forward to next year’s event.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 body {
     max-width: 40em;
-    margin: auto;
+    margin-left: 20%;
     font-family: "Trebuchet MS", Tahoma, sans-serif;
     font-size: large;
     line-height: 1.8em;
@@ -21,6 +21,12 @@ h4 {
   margin: 0px;
 }
 
+img {
+  max-width: 40em;
+  display: block;
+  margin: auto;
+}
+
 a {
   color: #FF7700;
   font-weight: bold;
@@ -33,25 +39,12 @@ a:link, a:visited {
   font-weight: normal;
 }
 
-
-section.main img#profilePic, .projectPic {
-  width: 40em;
-  text-align: center;
-  max-width: 100%;
-}
-
-.projectInfo {
-  color: #000000;
-}
-
 .projectDate {
   float: right;
 }
 
 .projectPic {
   max-width: 60%;
-  display: block;
-  margin: auto;
   padding: 10px;
 }
 
@@ -90,22 +83,10 @@ section.datedRow p {
   width: 40em;
 }
 
- {
-  display:table-cell;
-  padding:5px;
-  width: 40em;
-}
-
 section.datedRow .tableRow p:nth-child(2) {
   text-align:right;
   width: 7em;
 }
-
-/* .credits {
-  font-size: 0.7em;
-  line-height: 1.5em;
-}
-*/
 
 .strikethrough {
   text-decoration: line-through;
@@ -117,4 +98,8 @@ span.verse {
 
 span.heading {
   font-weight: bold;
+}
+
+ol.roman {
+  list-style-type: lower-roman;
 }

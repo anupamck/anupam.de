@@ -1,0 +1,59 @@
+@font-face{
+    font-family: "roboto mono";
+         src: url("fonts/RobotoMono-Regular.ttf");
+}
+
+#descriptifyLogo {
+  max-width: 60%;
+  padding: 10px;
+}
+
+body {
+  background-color: #000030;
+  color: #ffffff;
+  font-family: 'roboto mono', serif;
+  font-size: medium;
+}
+
+h1, h2, h3, h4 {
+  font-family: roboto, serif;
+  color: #ffffff;
+}
+
+a {
+  color: #EBE645;
+  font-weight: bold;
+}
+
+a:link, a:visited {
+  color: #789fbb;
+  text-decoration: none;
+  border-bottom: none;
+  font-weight: normal;
+}
+
+section.project {
+  margin-bottom: 2em;
+  padding:20px;
+  box-shadow: 0 0px 10px 2px grey;
+}
+
+.projectPic {
+  max-width: 80%;
+}
+
+.glow {
+  color: #fff;
+  -webkit-animation: glow 0.25s ease-in-out infinite alternate;
+  -moz-animation: glow 1.5s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #D1D100, 0 0 20px #D1D100, 0 0 30px #D1D100, 0 0 40px #FFFF00, 0 0 70px #FFFF00, 0 0 80px #FFFF00, 0 0 100px #FFFF8A, 0 0 150px #FFFF8A;
+  }
+  to {
+    text-shadow: 0 0 5px #D1D100, 0 0 10px #D1D100, 0 0 15px #D1D100, 0 0 20px #FFFF00, 0 0 35px #FFFF00, 0 0 40px #FFFF00, 0 0 50px #FFFF8A, 0 0 75px #FFFF8A;
+  }
+}
