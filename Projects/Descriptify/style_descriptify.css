@@ -4,7 +4,7 @@
 }
 
 @font-face{
-    font-family: "roboto";
+    font-family: "roboto regular";
          src: url("fonts/Roboto-Regular.ttf");
 }
 
@@ -16,12 +16,12 @@
 body {
   background-color: #000030;
   color: #ffffff;
-  font-family: 'roboto mono', serif;
+  font-family: 'roboto mono',courier, monospace;
   font-size: medium;
 }
 
 h1, h2, h3, h4 {
-  font-family: roboto, serif;
+  font-family: 'roboto regular', courier, monospace;
   color: #ffffff;
 }
 
