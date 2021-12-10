@@ -3,6 +3,11 @@
          src: url("fonts/RobotoMono-Regular.ttf");
 }
 
+@font-face{
+    font-family: "roboto";
+         src: url("fonts/Roboto-Regular.ttf");
+}
+
 #descriptifyLogo {
   max-width: 60%;
   padding: 10px;
