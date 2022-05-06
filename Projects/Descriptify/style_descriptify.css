@@ -16,8 +16,10 @@
 body {
   background-color: #000030;
   color: #ffffff;
+  max-width: 45em;
   font-family: 'roboto mono',courier, monospace;
   font-size: medium;
+
 }
 
 h1, h2, h3, h4 {
