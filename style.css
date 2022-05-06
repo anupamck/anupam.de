@@ -102,14 +102,19 @@ ol.roman {
   list-style-type: lower-roman;
 }
 
-@media screen and (max-width: 1080px) {
-  body {
-    margin-left: 10%;
-  }
+blockquote, q {
+  font-style: italic;
 }
 
+q::before {
+  content: "'";
+}
 
-@media screen and (max-width: 800px) {
+q::after {
+  content: "'";
+}
+
+@media screen and (max-width: 1080px) {
   body {
     margin-left: 5%;
     max-width: none;
