@@ -114,6 +114,17 @@ q::after {
   content: "'";
 }
 
+span.separator {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+div.caption {
+  width: 100%;
+  text-align: center;
+  font-size: 80%;
+  opacity: 60%;
+}
+
 @media screen and (max-width: 1080px) {
   body {
     margin-left: 5%;
