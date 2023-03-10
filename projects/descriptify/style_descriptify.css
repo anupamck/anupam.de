@@ -70,6 +70,10 @@ ol.chapters {
   padding-left: 0;
 }
 
-span.separator {
+span.separator, span.date {
   color: rgba(255,255,255,0.5);
+}
+
+span.date {
+  color: rgba(255,255,255,0.7);
 }
