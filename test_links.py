@@ -2,7 +2,7 @@ import requests
 from urllib.parse import urljoin
 
 def test_homepage_links():
-    links = ['/', 'writing/writing.html', 'projects/projects.html', 'about/about']
+    links = ['/', 'writing/writing.html', 'projects/projects.html', 'about']
     base_url = 'https://anupam.de'
     for link in links:
         url = urljoin(base_url, link)
