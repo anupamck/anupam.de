@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link type="text/css" rel="stylesheet" href="../style.css">
+    <link type="text/css" rel="stylesheet" href="https://anupam.de/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Anupam Krishnamurthy | About</title>
   </head>
   <body>
-    <a href="../"><h1>Anupam Krishnamurthy</h1></a>
+    <a href="https://anupam.de/"><h1>Anupam Krishnamurthy</h1></a>
     <div class="wrapper">
       <nav id="sidebar">
-        <a href="../">now</a>
-        <a href="../writing/writing.html">writing</a>
-        <a href="../projects/projects.html"> projects</a>
+        <a href="https://anupam.de">now</a>
+        <a href="https://anupam.de/writing">writing</a>
+        <a href="https://anupam.de/projects"> projects</a>
         <a>about</a>
       </nav>
 
       <section class="main">
-        <img id="profilePic" src="../images/aboutPic.jpeg"
+        <img id="profilePic" src="https://anupam.de/images/aboutPic.jpeg"
         alt="Me wearing a grey t-shirt and smiling in front of the Pantheon in Rome">
         <p>
           I grew up in Bangalore and currently live in Berlin, Germany.
@@ -47,7 +47,7 @@
             The design of this website is <span class="strikethrough">copied from</span> heavily
             inspired by Ivan Echeverria's <a href="https://www.echevarria.io/about" target="_blank">website</a>.
             Its source is <a href="https://github.com/anupamck/anupam.de" target="_blank">public</a>.<br><br>
-            You can read about how this website got started <a href="../writing/essays/howThisSiteWasBorn.html">here</a>.
+            You can read about how this website got started <a href="https://anupam.de/writing/essays/howThisSiteWasBorn.html">here</a>.
 
             The good photographs on the site are my wife, Malavika's work (I am solely
             to blame for the bad ones).
