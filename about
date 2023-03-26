@@ -11,8 +11,8 @@
     <div class="wrapper">
       <nav id="sidebar">
         <a href="https://anupam.de">now</a>
-        <a href="https://anupam.de/writing">writing</a>
-        <a href="https://anupam.de/projects"> projects</a>
+        <a href="https://anupam.de/writing/writing.html">writing</a>
+        <a href="https://anupam.de/projects/projects.html"> projects</a>
         <a>about</a>
       </nav>
 
