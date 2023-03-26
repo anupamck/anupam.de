@@ -9,7 +9,7 @@ def get_test_links(url):
     test_links = []
     for link in soup.find_all('a'):
         href = link.get('href')
-        if href is not None and not href.startswith('mailto'):
+        if href is not None and not href.startswith('mailto'):         # Ignore mailto links
             test_links.append(href)
     return test_links
 
