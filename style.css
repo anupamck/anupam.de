@@ -1,13 +1,13 @@
 body {
-    margin-left: 20%;
-    max-width: 40em;
-    font-family: "Trebuchet MS", Tahoma, sans-serif;
-    font-size: large;
-    line-height: 1.8em;
-    padding-bottom: 2em;
-    -webkit-text-size-adjust:100%;
-    -moz-text-size-adjust:100%;
-    -ms-text-size-adjust:100%;
+  margin-left: 20%;
+  max-width: 40em;
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+  font-size: large;
+  line-height: 1.8em;
+  padding-bottom: 2em;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 .wrapper {
@@ -15,7 +15,9 @@ body {
   flex-direction: row;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: sohne, sans-serif;
   font-weight: normal;
   color: #000000;
@@ -29,7 +31,8 @@ h4 {
   margin: 0px;
 }
 
-img, iframe {
+img,
+iframe {
   max-width: 40em;
   display: block;
   margin: auto;
@@ -40,7 +43,8 @@ a {
   font-weight: bold;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: #189ad3;
   text-decoration: none;
   border-bottom: none;
@@ -65,19 +69,19 @@ nav#sidebar {
   align-self: flex-start;
 }
 
-nav a{
-    display: block;
-    font-size: large;
+nav a {
+  display: block;
+  font-size: large;
 }
 
 section.project {
   margin-bottom: 1.5em;
-  padding:20px;
+  padding: 20px;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
 }
 
 section.datedRow p {
-  padding:5px;
+  padding: 5px;
   width: 40em;
 }
 
@@ -107,7 +111,8 @@ ol.roman {
   list-style-type: lower-roman;
 }
 
-blockquote, q {
+blockquote,
+q {
   font-style: italic;
 }
 
@@ -145,12 +150,13 @@ div.caption {
     position: static;
   }
 
-  nav a{
+  nav a {
     display: inline;
     padding: 0.25em;
   }
 
-  img, iframe {
+  img,
+  iframe {
     max-width: 100%;
   }
 
