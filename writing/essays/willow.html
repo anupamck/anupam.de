@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../../style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anupam Krishnamurthy | Willow</title>
+  </head>
+  <body>
+    <a href="../../"><h1>Anupam Krishnamurthy</h1></a>
+    <div class="wrapper">
+      <nav id="sidebar">
+        <a href="../../">now</a>
+        <a href="../writing.html">writing</a>
+        <a href="../../projects/projects.html"> projects</a>
+        <a href="../../about">about</a>
+      </nav>
+      <section class="main">
+      <h2>Willow</h2>
+      <span class="date">Jul 2023</span>
+      <p>
+        One consequence of living abroad while having friends and family who are scattered around 
+        the world is that you tend to fall out of touch. It also doesn't help that I don't use much social media.
+      </p>
+      <p>
+        To solve this problem, I built a simple tool that serves only two purposes:
+        <ul>
+          <li>reminding me to get in touch with people I have not spoken to in a while</li>
+          <li>maintaining notes of past conversations</li>
+        </ul>
+        I call it <a href="https://willowdb.net">Willow</a>.
+      </p>
+      <h3>What's under the hood?</h3>
+      <p>
+        Willow employs Flask, a simple Python web framework, and is completely server-side rendered. 
+        Contacts and interactions are stored in simple SQLite databases. On the front-end, I use HTML
+        templating with Jinja2, which ships with Flask. The styling is all CSS. The app is hosted on
+        Hetzner Cloud. I used pytest for unit tests and Playwright for website.
+      </p>
+      <h3>What did the process look like?</h3>
+      <p>
+        Building the app was a great learning experience. It started as a suggestion from a friend, who had built
+        a similar app for his own use. I then used <a href="https://www.appsmith.com/">Appsmith</a>, a low code 
+        front-end builder to build a working prototype. 
+      </p>
+      <p>
+        I then started building the app out using Flask and a lot of help from ChatGPT. Initial progress
+        was rapid, but I soon had to resort to hacks that I was ashamed off. I then realized that my code 
+        wasn't modular enough to test properly.  
+      </p>
+      <p>
+        I started off with some website tests using Playwright and used them as a basis for refactoring my code. 
+        I was then able to write unit tests as well. I then proceeded from hurdle to hurdle - from authentication to 
+        database to server deployment. All of this was new to me, so I ended up learning a tonne of stuff. 
+      </p>
+      <h3>What is next?</h3>
+      <p>
+        The application is still lacking some basic features, such as mobile responsiveness, registration and password reset.
+        They will be out soon. However, the core functionality is ready. I have been using it for a few weeks now and it 
+        serves my needs well. I have also shared it with a few friends for beta testing. Write to me if you would like to 
+        try it out. 
+      </p>
+      <hr>
+      <p>
+        A special thanks to my friend, Neil Fernandes, for inspiring this project. 
+      </p>
+      </section>
+    </div>
+  </body>
+</html>
