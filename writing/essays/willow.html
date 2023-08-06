@@ -35,7 +35,7 @@
         Willow employs Flask, a simple Python web framework, and is completely server-side rendered. 
         Contacts and interactions are stored in simple SQLite databases. On the front-end, I use HTML
         templating with Jinja2, which ships with Flask. The styling is all CSS. The app is hosted on
-        Hetzner Cloud. I used pytest for unit tests and Playwright for website.
+        Hetzner Cloud. I used pytest for unit tests and Playwright for website tests.
       </p>
       <h3>What did the process look like?</h3>
       <p>
@@ -45,8 +45,9 @@
       </p>
       <p>
         I then started building the app out using Flask and a lot of help from ChatGPT. Initial progress
-        was rapid, but I soon had to resort to hacks that I was ashamed off. I then realized that my code 
-        wasn't modular enough to test properly.  
+        was rapid, but I soon had to resort to hacks that I was ashamed off. I then realized that I needed 
+        some code refactoring. When I tried to write some unit tests, I realized that my code wasn't modular 
+        enough to test properly.  
       </p>
       <p>
         I started off with some website tests using Playwright and used them as a basis for refactoring my code. 
