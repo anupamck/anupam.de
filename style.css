@@ -38,6 +38,10 @@ iframe {
   margin: auto;
 }
 
+img.medium {
+  max-width: 30em;
+}
+
 a {
   color: #FF7700;
   font-weight: bold;
@@ -133,6 +137,8 @@ div.caption {
   text-align: center;
   font-size: 80%;
   opacity: 60%;
+  line-height: 1.2em;
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 1080px) {
