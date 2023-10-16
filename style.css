@@ -43,7 +43,7 @@ img.medium {
 }
 
 a {
-  color: #FF7700;
+  color: #ff7700;
   font-weight: bold;
 }
 
@@ -90,8 +90,13 @@ section.datedRow p {
 }
 
 section.datedRow {
-  display: grid;
-  grid-template-columns: 1fr max-content;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.date {
+  flex-shrink: 0;
+  padding: 0px 5px;
 }
 
 .strikethrough {
@@ -174,5 +179,4 @@ div.caption {
   .datedRow .date {
     margin-bottom: 0.75em;
   }
-
 }
