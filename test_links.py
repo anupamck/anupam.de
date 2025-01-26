@@ -22,8 +22,12 @@ def test_home_page_links():
     test_links = get_test_links(test_page_url)
     for link in test_links:
         url = urljoin(base_url, link)
-        response = requests.get(url)
-        assert response.status_code in [200, 999], f"Link {link} is broken"
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+        }
+        response = requests.get(url, headers=headers)
+        assert response.status_code in [
+            200, 999], f"Link {link} is broken"
 
 
 def test_about_page_links():
@@ -32,8 +36,12 @@ def test_about_page_links():
     test_links = get_test_links(test_page_url)
     for link in test_links:
         url = urljoin(base_url, link)
-        response = requests.get(url)
-        assert response.status_code in [200, 999], f"Link {link} is broken"
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+        }
+        response = requests.get(url, headers=headers)
+        assert response.status_code in [
+            200, 999], f"Link {link} is broken"
 
 
 def test_writing_page_links():
@@ -42,7 +50,10 @@ def test_writing_page_links():
     test_links = get_test_links(test_page_url)
     for link in test_links:
         url = urljoin(base_url, link)
-        response = requests.get(url)
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+        }
+        response = requests.get(url, headers=headers)
         assert response.status_code in [200, 999], f"Link {link} is broken"
 
 
@@ -52,7 +63,10 @@ def test_projects_page_links():
     test_links = get_test_links(test_page_url)
     for link in test_links:
         url = urljoin(base_url, link)
-        response = requests.get(url)
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+        }
+        response = requests.get(url, headers=headers)
         assert response.status_code in [200, 999], f"Link {link} is broken"
 
 
@@ -62,5 +76,8 @@ def test_descriptify_home_page_links():
     test_links = get_test_links(test_page_url)
     for link in test_links:
         url = urljoin(base_url, link)
-        response = requests.get(url)
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+        }
+        response = requests.get(url, headers=headers)
         assert response.status_code in [200, 999], f"Link {link} is broken"
