@@ -1,18 +1,31 @@
 body {
-  margin-left: 20%;
   max-width: 40em;
+  margin-left: auto;
+  margin-right:auto;
+  padding-left: var(--space-s-2xl);
+  padding-right: var(--space-s-2xl);
   font-family: "Trebuchet MS", Tahoma, sans-serif;
-  font-size: large;
+  font-size: var(--step-0);
   line-height: 1.8em;
-  padding-bottom: 2em;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+  padding-bottom: var(--space-s-l);
+  align-self: center;
 }
 
 .wrapper {
   display: flex;
   flex-direction: row;
+}
+
+h1 {
+  font-size: var(--step-3);
+}
+
+h2 {
+  font-size: var(--step-2);
+}
+
+h3 {
+  font-size: var(--step-1);
 }
 
 h1,
@@ -21,6 +34,9 @@ h3 {
   font-family: sohne, sans-serif;
   font-weight: normal;
   color: #000000;
+  line-height: var(--space-l);
+  margin-bottom: var(--space-xs)
+
 }
 
 h3.separator {
@@ -31,9 +47,13 @@ h4 {
   margin: 0px;
 }
 
+p {
+  margin-top: var(--space-3xs);
+}
+
 img,
 iframe {
-  max-width: 40em;
+  max-width: 90%;
   display: block;
   margin: auto;
 }
@@ -61,7 +81,7 @@ a:visited {
 
 .projectPic {
   max-width: 60%;
-  padding: 10px;
+  padding: var(--space-s-m);
 }
 
 nav#sidebar {
@@ -75,7 +95,7 @@ nav#sidebar {
 
 nav a {
   display: block;
-  font-size: large;
+  font-size: var(--step-1);
 }
 
 section.project {
@@ -147,15 +167,14 @@ div.caption {
 }
 
 @media screen and (max-width: 1080px) {
-  body {
-    margin-left: 5%;
+  body {  
     max-width: none;
   }
 
   .wrapper {
     display: flex;
     flex-direction: column;
-  }
+  } 
 
   nav#sidebar {
     position: static;
@@ -165,18 +184,45 @@ div.caption {
     display: inline;
     padding: 0.25em;
   }
+}
 
-  img,
-  iframe {
-    max-width: 100%;
-  }
+/* @link https://utopia.fyi/type/calculator?c=320,12,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
-  section.datedRow {
-    display: flex;
-    flex-direction: column;
-  }
+:root {
+  --step--2: clamp(0.5208rem, 0.4237rem + 0.4855vw, 0.8rem);
+  --step--1: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
+  --step-0: clamp(0.75rem, 0.5761rem + 0.8696vw, 1.25rem);
+  --step-1: clamp(0.9rem, 0.6696rem + 1.1522vw, 1.5625rem);
+  --step-2: clamp(1.08rem, 0.7763rem + 1.5185vw, 1.9531rem);
+  --step-3: clamp(1.296rem, 0.8976rem + 1.992vw, 2.4414rem);
+  --step-4: clamp(1.5552rem, 1.0347rem + 2.6027vw, 3.0518rem);
+  --step-5: clamp(1.8662rem, 1.1885rem + 3.3886vw, 3.8147rem);
+}
 
-  .datedRow .date {
-    margin-bottom: 0.75em;
-  }
+/* @link https://utopia.fyi/space/calculator?c=320,12,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --space-3xs: clamp(0.1875rem, 0.144rem + 0.2174vw, 0.3125rem);
+  --space-2xs: clamp(0.375rem, 0.288rem + 0.4348vw, 0.625rem);
+  --space-xs: clamp(0.5625rem, 0.4321rem + 0.6522vw, 0.9375rem);
+  --space-s: clamp(0.75rem, 0.5761rem + 0.8696vw, 1.25rem);
+  --space-m: clamp(1.125rem, 0.8641rem + 1.3043vw, 1.875rem);
+  --space-l: clamp(1.5rem, 1.1522rem + 1.7391vw, 2.5rem);
+  --space-xl: clamp(2.25rem, 1.7283rem + 2.6087vw, 3.75rem);
+  --space-2xl: clamp(3rem, 2.3043rem + 3.4783vw, 5rem);
+  --space-3xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.1875rem, 0.0353rem + 0.7609vw, 0.625rem);
+  --space-2xs-xs: clamp(0.375rem, 0.1793rem + 0.9783vw, 0.9375rem);
+  --space-xs-s: clamp(0.5625rem, 0.3234rem + 1.1957vw, 1.25rem);
+  --space-s-m: clamp(0.75rem, 0.3587rem + 1.9565vw, 1.875rem);
+  --space-m-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
+  --space-l-xl: clamp(1.5rem, 0.7174rem + 3.913vw, 3.75rem);
+  --space-xl-2xl: clamp(2.25rem, 1.2935rem + 4.7826vw, 5rem);
+  --space-2xl-3xl: clamp(3rem, 1.4348rem + 7.8261vw, 7.5rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(0.75rem, 0.1413rem + 3.0435vw, 2.5rem);
+  --space-s-2xl: clamp(0.75rem, -0.7283rem + 7.3913vw, 5rem);
 }
