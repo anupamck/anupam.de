@@ -88,7 +88,6 @@ def test_descriptify_home_page_links():
     test_page_url = urljoin(base_path, descriptify_path)
     print(f"Testing descriptify home page links at {test_page_url}")
     test_links = get_test_links(test_page_url)
-    print("test_links", test_links)
     for link in test_links:
         url = urljoin(base_path, link)
         headers = {

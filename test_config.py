@@ -1,10 +1,11 @@
-# Environment configuration for testing
-# Set ENVIRONMENT to 'local' or 'prod'
+# Configuration loader that reads from .env file
+import os
 
-ENVIRONMENT = "local"
+# Get environment from environment variable (can be overridden from command line)
+ENVIRONMENT = os.environ.get("ENVIRONMENT", "local")
 
-# Base URLs for different environments
+# Get URLs from environment variables
 baseURLs = {
-    "local": "http://localhost:8000",
-    "prod": "https://anupam.de"
+    "local": os.environ.get("LOCAL_URL", "http://localhost:8000"),
+    "prod": os.environ.get("PROD_URL", "https://anupam.de")
 }
