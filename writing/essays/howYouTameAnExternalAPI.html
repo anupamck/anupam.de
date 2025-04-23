@@ -1,424 +1,402 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link type="text/css" rel="stylesheet" href="../../style.css" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      Anupam Krishnamurthy | How do you tame an external API that constantly
-      breaks your tests
-    </title>
-  </head>
 
-  <body>
-    <a href="../../">
-      <h1>Anupam Krishnamurthy</h1>
-    </a>
-    <div class="wrapper">
-      <nav id="sidebar">
-        <a href="../../">now</a>
-        <a href="../writing.html">writing</a>
-        <a href="../../projects/projects.html"> projects</a>
-        <a href="../../about">about</a>
-      </nav>
-      <section class="main">
-        <h2>
-          How do you tame an external API that constantly breaks your tests?
-        </h2>
-        <span class="date">Oct 2023</span>
-        <p>
-          <i
-            >This article is the written version of the talk Vincent Hennig and
-            I presented at the WeAreDevelopers conference on 28 July, 2023 in
-            Berlin.</i
-          >
-        </p>
-        <p>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube-nocookie.com/embed/Bbl5rL7pxKs?si=uQdRMmO4L8cwC8vX"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </p>
+<head>
+  <link type="text/css" rel="stylesheet" href="../../style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    Anupam Krishnamurthy | How do you tame an external API that constantly
+    breaks your tests
+  </title>
+</head>
 
-        <p>
-          October 2021 was a month filled with agony for my software development
-          team. We found ourselves in a crisis that led us to some
-          soul-searching.
-        </p>
+<body>
+  <a href="../../">
+    <h1>Anupam Krishnamurthy</h1>
+  </a>
+  <div class="wrapper">
+    <nav id="sidebar">
+      <a href="../../">now</a>
+      <a href="../writing.html">writing</a>
+      <a href="../../projects/projects.html"> projects</a>
+      <a href="../../about/about.html">about</a>
+    </nav>
+    <section class="main">
+      <h2>
+        How do you tame an external API that constantly breaks your tests?
+      </h2>
+      <span class="date">Oct 2023</span>
+      <p>
+        <i>This article is the written version of the talk Vincent Hennig and
+          I presented at the WeAreDevelopers conference on 28 July, 2023 in
+          Berlin.</i>
+      </p>
+      <p>
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Bbl5rL7pxKs?si=uQdRMmO4L8cwC8vX"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </p>
 
-        <p>
-          I work as part of a front-end focused team, which develops and hosts
-          an E-commerce website for our client. I say 'front-end focused'
-          because our backed is maintained by an external team, whose API our
-          web application consumes. Shortly before October 2021, the backend
-          team made a major change to this API, which sent our tests into a
-          tizzy. 8 out of 10 of our end-to-end tests were red, and had to be
-          painstakingly analysed, adapted and comforted. In most cases, the API
-          didn't send the responses we expected. When it did, the response data
-          weren't in the right format. Further, key test data were missing.
-        </p>
+      <p>
+        October 2021 was a month filled with agony for my software development
+        team. We found ourselves in a crisis that led us to some
+        soul-searching.
+      </p>
 
-        <p>
-          The whole process felt like putting together a complex jigsaw puzzle,
-          but with pieces that kept changing shape. The moment we solved one
-          section of the puzzle, another section would get scrambled. Every
-          corrected test was a piece forced back into place, and the whole month
-          was a slow, painstaking effort to rebuild a familiar picture from a
-          chaotic mess of ill-fitting parts.
-        </p>
+      <p>
+        I work as part of a front-end focused team, which develops and hosts
+        an E-commerce website for our client. I say 'front-end focused'
+        because our backed is maintained by an external team, whose API our
+        web application consumes. Shortly before October 2021, the backend
+        team made a major change to this API, which sent our tests into a
+        tizzy. 8 out of 10 of our end-to-end tests were red, and had to be
+        painstakingly analysed, adapted and comforted. In most cases, the API
+        didn't send the responses we expected. When it did, the response data
+        weren't in the right format. Further, key test data were missing.
+      </p>
 
-        <p>
-          Out of morbid curiosity, we decided to measure how much pain this
-          process caused us (in number of hours). The verdict took us all aback.
-          It took us 172(!) hours to recover from a major update to the backend
-          API. We then asked ourselves how many bugs or errors we had uncovered
-          for the 172 hours we had invested. The answer was 1 bug. 1 measly
-          dropdown that wasn't working as expected. The rest of the time was
-          spent merely patching up wounds that had exposed our fragility to the
-          external API. Something had to change.
-        </p>
+      <p>
+        The whole process felt like putting together a complex jigsaw puzzle,
+        but with pieces that kept changing shape. The moment we solved one
+        section of the puzzle, another section would get scrambled. Every
+        corrected test was a piece forced back into place, and the whole month
+        was a slow, painstaking effort to rebuild a familiar picture from a
+        chaotic mess of ill-fitting parts.
+      </p>
 
-        <p>
-          Today, we have come a long way with solving this problem. In Mar 2023,
-          it took us merely 4 hours to recover from another backend overhaul.
-          This progress motivated my colleague Vincent and me to share our
-          learning. We told our story at the WeAreDevelopers 2023 conference in
-          Berlin to a packed audience (see video above). This article reiterates
-          what we narrated there.
-        </p>
+      <p>
+        Out of morbid curiosity, we decided to measure how much pain this
+        process caused us (in number of hours). The verdict took us all aback.
+        It took us 172(!) hours to recover from a major update to the backend
+        API. We then asked ourselves how many bugs or errors we had uncovered
+        for the 172 hours we had invested. The answer was 1 bug. 1 measly
+        dropdown that wasn't working as expected. The rest of the time was
+        spent merely patching up wounds that had exposed our fragility to the
+        external API. Something had to change.
+      </p>
 
-        <img
-          src="../../images/e2ETestTimeToFix.png"
-          alt="A bar graph with hours on the y-axis, that goes down from 172 to 27.5 to 4 from Oct 2021 to Mar 2022 to Mar 2023 respectively"
-        />
+      <p>
+        Today, we have come a long way with solving this problem. In Mar 2023,
+        it took us merely 4 hours to recover from another backend overhaul.
+        This progress motivated my colleague Vincent and me to share our
+        learning. We told our story at the WeAreDevelopers 2023 conference in
+        Berlin to a packed audience (see video above). This article reiterates
+        what we narrated there.
+      </p>
 
-        <h3>The root cause</h3>
+      <img src="../../images/e2ETestTimeToFix.png"
+        alt="A bar graph with hours on the y-axis, that goes down from 172 to 27.5 to 4 from Oct 2021 to Mar 2022 to Mar 2023 respectively" />
 
-        <p>
-          Since we were primarily a front-end team, we had extensive tests
-          against our front-end. However, we had neglected testing the back-end
-          API we consumed, since an external team owned it. This was a big
-          mistake. We then realized that it was also our responsibility to test
-          the backend API with an equal amount of rigour. Further, we needed to
-          improve coordination and collaboration with the external backend team.
-          Finally, we needed to make our software and tests robust to changes in
-          their API environment.
-        </p>
-        <img
-          class="medium"
-          src="../../images/e2ESetup1.png"
-          alt="Schematic diagram showing our dev system connected to an external API, with only front-end tests in place"
-        />
-        <div class="caption">
-          Our initial setup, with no tests against the external API. The
-          lightning bolt indicates the pain we felt.
-        </div>
-        <p>
-          This is an old problem in software development, and it has an old
-          solution that goes by the name of Consumer Driven Contract Testing. An
-          API contract is an agreement between an API provider (the external
-          backend team) and an API consumer (us), which documents this API's
-          behaviour. Our solution to this problem involved a three step process:
-        </p>
+      <h3>The root cause</h3>
 
-        <ul>
-          <li>Validate contract</li>
-          <li>Enforce contract</li>
-          <li>Simulate contract</li>
-        </ul>
-        <p>
-          These steps are sequential, and represent different levels of maturity
-          . E.g. to successfully move to step 3, simulate contract, you need to
-          have validated and enforced it earlier.
-        </p>
+      <p>
+        Since we were primarily a front-end team, we had extensive tests
+        against our front-end. However, we had neglected testing the back-end
+        API we consumed, since an external team owned it. This was a big
+        mistake. We then realized that it was also our responsibility to test
+        the backend API with an equal amount of rigour. Further, we needed to
+        improve coordination and collaboration with the external backend team.
+        Finally, we needed to make our software and tests robust to changes in
+        their API environment.
+      </p>
+      <img class="medium" src="../../images/e2ESetup1.png"
+        alt="Schematic diagram showing our dev system connected to an external API, with only front-end tests in place" />
+      <div class="caption">
+        Our initial setup, with no tests against the external API. The
+        lightning bolt indicates the pain we felt.
+      </div>
+      <p>
+        This is an old problem in software development, and it has an old
+        solution that goes by the name of Consumer Driven Contract Testing. An
+        API contract is an agreement between an API provider (the external
+        backend team) and an API consumer (us), which documents this API's
+        behaviour. Our solution to this problem involved a three step process:
+      </p>
 
-        <h3>Setup</h3>
-        <p>
-          For our demos, we used
-          <a href="https://fakestoreapi.com/">Fake Store API</a> as the test
-          API. For writing the tests, we used
-          <a href="https://github.com/karatelabs/karate">Karate DSL</a>, a
-          versatile and user-friendly test framework that uses Gerkin like
-          syntax. You can see all the demos in the video linked to this article.
-          The code presented in the demo can be found in
-          <a href="https://github.com/bitgrip/WAD-2023-contract-testing"
-            >this Github repository</a
-          >.
-        </p>
+      <ul>
+        <li>Validate contract</li>
+        <li>Enforce contract</li>
+        <li>Simulate contract</li>
+      </ul>
+      <p>
+        These steps are sequential, and represent different levels of maturity
+        . E.g. to successfully move to step 3, simulate contract, you need to
+        have validated and enforced it earlier.
+      </p>
 
-        <h3>Validate contract</h3>
-        <p>
-          This step involves writing automated tests to ensure that the API is
-          working as expected. We wrote these tests at three different levels of
-          detail - status, schema and data.
-        </p>
-        <h4>Level 1. Validate status</h4>
-        <p>
-          We started off by writing tests that ensured if key endpoints were
-          sending us the right response status. Since this was a red-green
-          superficial check, we needed more.
-        </p>
-        <script src="https://gist.github.com/anupamck/528828ad8b1060e9562c6cb11f3252c4.js"></script>
+      <h3>Setup</h3>
+      <p>
+        For our demos, we used
+        <a href="https://fakestoreapi.com/">Fake Store API</a> as the test
+        API. For writing the tests, we used
+        <a href="https://github.com/karatelabs/karate">Karate DSL</a>, a
+        versatile and user-friendly test framework that uses Gerkin like
+        syntax. You can see all the demos in the video linked to this article.
+        The code presented in the demo can be found in
+        <a href="https://github.com/bitgrip/WAD-2023-contract-testing">this Github repository</a>.
+      </p>
 
-        <h4>Level 2. Validate schema</h4>
+      <h3>Validate contract</h3>
+      <p>
+        This step involves writing automated tests to ensure that the API is
+        working as expected. We wrote these tests at three different levels of
+        detail - status, schema and data.
+      </p>
+      <h4>Level 1. Validate status</h4>
+      <p>
+        We started off by writing tests that ensured if key endpoints were
+        sending us the right response status. Since this was a red-green
+        superficial check, we needed more.
+      </p>
+      <script src="https://gist.github.com/anupamck/528828ad8b1060e9562c6cb11f3252c4.js"></script>
 
-        <p>
-          We then moved on to also validating the response schema for these
-          endpoints. We merely asserted the availability of specific keys while
-          keeping their values generic. We did this so that our tests would not
-          break even if the specific data delivered by the endpoints changed.
-        </p>
-        <script src="https://gist.github.com/anupamck/2e0131dcb87b5c6abded5d9a47b423a9.js"></script>
-        <p>
-          In the first scenario, we insist on each item of the response array to
-          deliver an id that is a number, a title that is a string and so on.
-          However, in certain cases, we needed to be even more specific, which
-          leads us to level 3.
-        </p>
+      <h4>Level 2. Validate schema</h4>
 
-        <h4>Level3. Validate data</h4>
+      <p>
+        We then moved on to also validating the response schema for these
+        endpoints. We merely asserted the availability of specific keys while
+        keeping their values generic. We did this so that our tests would not
+        break even if the specific data delivered by the endpoints changed.
+      </p>
+      <script src="https://gist.github.com/anupamck/2e0131dcb87b5c6abded5d9a47b423a9.js"></script>
+      <p>
+        In the first scenario, we insist on each item of the response array to
+        deliver an id that is a number, a title that is a string and so on.
+        However, in certain cases, we needed to be even more specific, which
+        leads us to level 3.
+      </p>
 
-        <p>
-          In this level of validation, we dealt with cases where our front-end
-          tests depended on specific data being delivered by the endpoint. Here
-          we insisted on this data being delivered in the format that our tests
-          expected them.
-        </p>
-        <script src="https://gist.github.com/anupamck/54419c01b334371e6f7f6ca87e4c31fc.js"></script>
-        <p>
-          In the first test scenario above, we insist on the 3rd product having
-          the title 'Mens Cotton Jacket', and its price being 55.99.
-        </p>
-        <p>
-          All these levels are cumulative, and together, they make for a robust
-          layer of tests against the external API.
-        </p>
-        <p>A couple of best practices to note here:</p>
-        <ul>
-          <li>
-            Expected API response schema are best stored in a separate JSON
-            file, so that they don't clutter up your tests.
-          </li>
-          <li>
-            Specific data that your tests expect can be stored in a separate
-            test data configuration file, which is then referenced across your
-            tests. This way, if this data changes, you only need to modify one
-            file.
-          </li>
-        </ul>
-        <p></p>
+      <h4>Level3. Validate data</h4>
 
-        <img
-          class="medium"
-          src="../../images/e2ESetup2.png"
-          alt="Schematic diagram now has tests against the front-end and the external back-end API"
-        />
-        <div class="caption">
-          Our schematic diagram now includes automated tests against the
-          external API.
-        </div>
+      <p>
+        In this level of validation, we dealt with cases where our front-end
+        tests depended on specific data being delivered by the endpoint. Here
+        we insisted on this data being delivered in the format that our tests
+        expected them.
+      </p>
+      <script src="https://gist.github.com/anupamck/54419c01b334371e6f7f6ca87e4c31fc.js"></script>
+      <p>
+        In the first test scenario above, we insist on the 3rd product having
+        the title 'Mens Cotton Jacket', and its price being 55.99.
+      </p>
+      <p>
+        All these levels are cumulative, and together, they make for a robust
+        layer of tests against the external API.
+      </p>
+      <p>A couple of best practices to note here:</p>
+      <ul>
+        <li>
+          Expected API response schema are best stored in a separate JSON
+          file, so that they don't clutter up your tests.
+        </li>
+        <li>
+          Specific data that your tests expect can be stored in a separate
+          test data configuration file, which is then referenced across your
+          tests. This way, if this data changes, you only need to modify one
+          file.
+        </li>
+      </ul>
+      <p></p>
 
-        <p>
-          The rule of thumb here is to write contract API tests for every
-          endpoint that our front-end tests depend upon. This really speeds up
-          the analysis of broken tests - if a front-end test fails and its
-          corresponding API test has also failed, chances are that these are
-          related.
-        </p>
+      <img class="medium" src="../../images/e2ESetup2.png"
+        alt="Schematic diagram now has tests against the front-end and the external back-end API" />
+      <div class="caption">
+        Our schematic diagram now includes automated tests against the
+        external API.
+      </div>
 
-        <p>
-          One thing you need to guard against is being too dogmatic. Remember
-          that your objective is not to test the backend API in its entirity. It
-          is to merely test that slice of the API that you depend upon. Merely
-          test the endpoints that you consume. And merely test those key-value
-          pairs in the schema that are relevant for your use. Only in
-          exceptional cases will you need to test the values that accompany
-          these keys.
-        </p>
+      <p>
+        The rule of thumb here is to write contract API tests for every
+        endpoint that our front-end tests depend upon. This really speeds up
+        the analysis of broken tests - if a front-end test fails and its
+        corresponding API test has also failed, chances are that these are
+        related.
+      </p>
 
-        <h3>Enforce contract</h3>
+      <p>
+        One thing you need to guard against is being too dogmatic. Remember
+        that your objective is not to test the backend API in its entirity. It
+        is to merely test that slice of the API that you depend upon. Merely
+        test the endpoints that you consume. And merely test those key-value
+        pairs in the schema that are relevant for your use. Only in
+        exceptional cases will you need to test the values that accompany
+        these keys.
+      </p>
 
-        <p>
-          A contract is merely as good as its enforcement. For the longest time,
-          we had defined our contract in the form of static documentation. Our
-          external partner used a Swagger page to document the endpoint's
-          behaviour. However, we knew with experience that this document grew
-          outdated with time. It was a constant struggle to keep it in sync with
-          the real API.
-        </p>
+      <h3>Enforce contract</h3>
 
-        <p>
-          At our end, we also documented test data in static tables in a
-          Confluence document. This document also required constant work and
-          tended to decay with time. We needed a better alternative.
-        </p>
+      <p>
+        A contract is merely as good as its enforcement. For the longest time,
+        we had defined our contract in the form of static documentation. Our
+        external partner used a Swagger page to document the endpoint's
+        behaviour. However, we knew with experience that this document grew
+        outdated with time. It was a constant struggle to keep it in sync with
+        the real API.
+      </p>
 
-        <h4>"Use your code as contract"</h4>
+      <p>
+        At our end, we also documented test data in static tables in a
+        Confluence document. This document also required constant work and
+        tended to decay with time. We needed a better alternative.
+      </p>
 
-        <p>
-          In step 1, validate contract, we had already written detailed tests to
-          ensure if a contract is working properly. We now realized that these
-          API tests serve as a better definition for the contract than static
-          documentation. With the first two levels of validation, these tests
-          can describe an API's behaviour as well as any API document can. As
-          for test data, this data can be conveniently captured in a test data
-          configuration file that feeds into your tests.
-        </p>
+      <h4>"Use your code as contract"</h4>
 
-        <p>
-          In effect, the API contract with your partner is fulfilled only if
-          these tests are green. Our mantra - use your code as contract. That
-          way, the contract's definition is dynamic and keeps pace with changes
-          to the API it describes.
-        </p>
+      <p>
+        In step 1, validate contract, we had already written detailed tests to
+        ensure if a contract is working properly. We now realized that these
+        API tests serve as a better definition for the contract than static
+        documentation. With the first two levels of validation, these tests
+        can describe an API's behaviour as well as any API document can. As
+        for test data, this data can be conveniently captured in a test data
+        configuration file that feeds into your tests.
+      </p>
 
-        <p>
-          But when your tests do invariably fail, how can you troubleshoot them?
-        </p>
+      <p>
+        In effect, the API contract with your partner is fulfilled only if
+        these tests are green. Our mantra - use your code as contract. That
+        way, the contract's definition is dynamic and keeps pace with changes
+        to the API it describes.
+      </p>
 
-        <h4>Troubleshooting woes</h4>
+      <p>
+        But when your tests do invariably fail, how can you troubleshoot them?
+      </p>
 
-        <p>
-          Our approach was to ping our partner team via a shared messaging app.
-          We would describe the problem in the chat window and throw some
-          additional info across for debugging. In most cases, this information
-          would not be adequate and they would request some more. Sometimes,
-          they give us a solution that we don't understand. This exchange goes
-          back-and-forth for hours, and sometimes for days, without the
-          underlying problem being resolved.
-        </p>
-        <p>
-          Our solution to this problem was to share our tests with our external
-          partner and have them test on our behalf. Now you might be skeptical
-          of why an external team would be enthusiastic to run your tests. This
-          is what we thought as well, until we suggested this to our partners
-          and were pleasantly surprised when they agreed right away.
-        </p>
+      <h4>Troubleshooting woes</h4>
 
-        <p>
-          This was when we realized that the pain we felt was also felt by our
-          partner team. They weren't thrilled about being interrupted with
-          debugging requests in the middle of important work. They also did not
-          enjoy playing detective, to random clues we threw at them across a
-          chat window. By sharing our API tests with our partners, we clearly
-          communicated what we expected from their API. Further, we also gave
-          them valuable information to debug and fix this problem.
-        </p>
+      <p>
+        Our approach was to ping our partner team via a shared messaging app.
+        We would describe the problem in the chat window and throw some
+        additional info across for debugging. In most cases, this information
+        would not be adequate and they would request some more. Sometimes,
+        they give us a solution that we don't understand. This exchange goes
+        back-and-forth for hours, and sometimes for days, without the
+        underlying problem being resolved.
+      </p>
+      <p>
+        Our solution to this problem was to share our tests with our external
+        partner and have them test on our behalf. Now you might be skeptical
+        of why an external team would be enthusiastic to run your tests. This
+        is what we thought as well, until we suggested this to our partners
+        and were pleasantly surprised when they agreed right away.
+      </p>
 
-        <p>
-          However, despite robust contract validation and enforcement, our
-          front-end code still has a tight dependency on the backend API. When
-          the API changed, it still broke our tests. Getting around this
-          limitation is what we do in the third step of our process.
-        </p>
-        <h3>Simulate contract</h3>
+      <p>
+        This was when we realized that the pain we felt was also felt by our
+        partner team. They weren't thrilled about being interrupted with
+        debugging requests in the middle of important work. They also did not
+        enjoy playing detective, to random clues we threw at them across a
+        chat window. By sharing our API tests with our partners, we clearly
+        communicated what we expected from their API. Further, we also gave
+        them valuable information to debug and fix this problem.
+      </p>
 
-        <p>
-          <i>Disclosure - we are still working on this part of the problem.</i>
-        </p>
+      <p>
+        However, despite robust contract validation and enforcement, our
+        front-end code still has a tight dependency on the backend API. When
+        the API changed, it still broke our tests. Getting around this
+        limitation is what we do in the third step of our process.
+      </p>
+      <h3>Simulate contract</h3>
 
-        <p>
-          With API mocking, you truly turn into the master of your domain. You
-          are finally isolated from the entropy introduced by those erratic
-          endpoints of your external partner. You can reset state changes as
-          often as necessary and reuse the same test data. You can mock and test
-          against endpoints that aren't available in the test environment due to
-          security or other constraints.
-        </p>
+      <p>
+        <i>Disclosure - we are still working on this part of the problem.</i>
+      </p>
 
-        <p>
-          What's more? With new features, you no longer have to wait on
-          endpoints to be delivered by the external team. Instead, you can
-          simulate the behaviour of endpoints that do not exist yet and start
-          developing new features against them.
-        </p>
+      <p>
+        With API mocking, you truly turn into the master of your domain. You
+        are finally isolated from the entropy introduced by those erratic
+        endpoints of your external partner. You can reset state changes as
+        often as necessary and reuse the same test data. You can mock and test
+        against endpoints that aren't available in the test environment due to
+        security or other constraints.
+      </p>
 
-        <p>
-          We started off by mocking our endpoints with Karate Netty, a feature
-          offered by Karate, which served us well for simple endpoints.
-        </p>
+      <p>
+        What's more? With new features, you no longer have to wait on
+        endpoints to be delivered by the external team. Instead, you can
+        simulate the behaviour of endpoints that do not exist yet and start
+        developing new features against them.
+      </p>
 
-        <script src="https://gist.github.com/anupamck/bb8a7188a5274a80585d0d64dfb207b7.js"></script>
+      <p>
+        We started off by mocking our endpoints with Karate Netty, a feature
+        offered by Karate, which served us well for simple endpoints.
+      </p>
 
-        <p>
-          You can run this example with the following command:
-          <code>
+      <script src="https://gist.github.com/anupamck/bb8a7188a5274a80585d0d64dfb207b7.js"></script>
+
+      <p>
+        You can run this example with the following command:
+        <code>
             java -jar karate-1.4.0.jar -m src/test/java/Simulate/users.feature
             -p 8081
           </code>
-        </p>
+      </p>
 
-        <p>
-          However, mocking also comes with its own reality distortion field.
-          With time, our mocked endpoints are sure to deviate from the real API,
-          which can lead to catastrophic failures if ignored for long enough.
-          Luckily, there is an easy solution to this problem. Those
-          triple-layered contract tests can be run against both the mock
-          endpoint and the real endpoint in quick succession. If both these test
-          runs are green, your mock is in sync with the API. If one of these are
-          red, a deviation has been detected. We demonstrate all of this in the
-          video linked to this article (see above).
-        </p>
+      <p>
+        However, mocking also comes with its own reality distortion field.
+        With time, our mocked endpoints are sure to deviate from the real API,
+        which can lead to catastrophic failures if ignored for long enough.
+        Luckily, there is an easy solution to this problem. Those
+        triple-layered contract tests can be run against both the mock
+        endpoint and the real endpoint in quick succession. If both these test
+        runs are green, your mock is in sync with the API. If one of these are
+        red, a deviation has been detected. We demonstrate all of this in the
+        video linked to this article (see above).
+      </p>
 
-        <img
-          class="medium"
-          src="../../images/e2ESetup3.png"
-          alt="Schematic diagram has a mock server as a proxy between the external back-end API"
-        />
-        <div class="caption">
-          The tight coupling with the backend server is now replaced by the
-          loosely coupled mock server.
-        </div>
+      <img class="medium" src="../../images/e2ESetup3.png"
+        alt="Schematic diagram has a mock server as a proxy between the external back-end API" />
+      <div class="caption">
+        The tight coupling with the backend server is now replaced by the
+        loosely coupled mock server.
+      </div>
 
-        <p>
-          One caveat here - avoid overengineering your mocks. Your mocks merely
-          need to simulate enough of the API's behaviour to verify your own
-          application. If you are simulating an endpoint that delivers an access
-          token, you can have it deliver the same token each time against a
-          dummy username and password. You don't need the behaviour to be a
-          replica of the external endpoint - that would be a waste of effort.
-          Your mocks need to merely pass your contract tests - nothing more.
-        </p>
+      <p>
+        One caveat here - avoid overengineering your mocks. Your mocks merely
+        need to simulate enough of the API's behaviour to verify your own
+        application. If you are simulating an endpoint that delivers an access
+        token, you can have it deliver the same token each time against a
+        dummy username and password. You don't need the behaviour to be a
+        replica of the external endpoint - that would be a waste of effort.
+        Your mocks need to merely pass your contract tests - nothing more.
+      </p>
 
-        <p>
-          We soon realized that our use case was too complex to build with
-          Karate Netty. We found
-          <a href="https://wiremock.org/docs/standalone/"
-            >Wiremock (standalone)</a
-          >
-          to be the most promising alternative here, which we are currently
-          building out. Although these tools are different, the same principles
-          apply.
-        </p>
+      <p>
+        We soon realized that our use case was too complex to build with
+        Karate Netty. We found
+        <a href="https://wiremock.org/docs/standalone/">Wiremock (standalone)</a>
+        to be the most promising alternative here, which we are currently
+        building out. Although these tools are different, the same principles
+        apply.
+      </p>
 
-        <h3>Summary</h3>
+      <h3>Summary</h3>
 
-        <p>
-          Building software often involves working closely with external teams
-          and consuming their services. These services are often foundational to
-          the application we are building. Therefore, it is a mistake to
-          abdicate the testing of these services entirely to the external teams
-          that build them. Even when external teams do test their software, they
-          are unlikely to do this from your perspective. The onus is on your
-          team and you to constantly verify the stability of the foundation that
-          your software is built upon.
-        </p>
-        <span class="separator">***</span>
-        <p>
-          Thanks to my colleauge
-          <a href="https://www.linkedin.com/in/vincent-a-hennig/"
-            >Vincent Hennig</a
-          >
-          for collaborating on this talk and this article. And thanks, of
-          course, to my employer <a href="https://bitgrip.com">Bitgrip</a> and
-          my colleagues there for making all of this possible.
-        </p>
-      </section>
-    </div>
-  </body>
+      <p>
+        Building software often involves working closely with external teams
+        and consuming their services. These services are often foundational to
+        the application we are building. Therefore, it is a mistake to
+        abdicate the testing of these services entirely to the external teams
+        that build them. Even when external teams do test their software, they
+        are unlikely to do this from your perspective. The onus is on your
+        team and you to constantly verify the stability of the foundation that
+        your software is built upon.
+      </p>
+      <span class="separator">***</span>
+      <p>
+        Thanks to my colleauge
+        <a href="https://www.linkedin.com/in/vincent-a-hennig/">Vincent Hennig</a>
+        for collaborating on this talk and this article. And thanks, of
+        course, to my employer <a href="https://bitgrip.com">Bitgrip</a> and
+        my colleagues there for making all of this possible.
+      </p>
+    </section>
+  </div>
+</body>
+
 </html>
