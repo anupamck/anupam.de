@@ -1,6 +1,7 @@
 import requests
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
+import test_config
 
 
 def get_test_links(url):
@@ -16,12 +17,18 @@ def get_test_links(url):
     return test_links
 
 
+def get_base_url():
+    # Get base URL from config
+    return test_config.baseURLs[test_config.ENVIRONMENT]
+
+
 def test_home_page_links():
-    base_url = 'https://anupam.de'
-    test_page_url = base_url
+    base_path = get_base_url()
+    test_page_url = base_path
+    print(f"Testing home page links at {test_page_url}")
     test_links = get_test_links(test_page_url)
     for link in test_links:
-        url = urljoin(base_url, link)
+        url = urljoin(base_path, link)
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
         }
@@ -31,11 +38,12 @@ def test_home_page_links():
 
 
 def test_about_page_links():
-    base_url = 'https://anupam.de'
-    test_page_url = urljoin(base_url, '/about')
+    base_path = get_base_url()
+    test_page_url = urljoin(base_path, '/about/about.html')
+    print(f"Testing about page links at {test_page_url}")
     test_links = get_test_links(test_page_url)
     for link in test_links:
-        url = urljoin(base_url, link)
+        url = urljoin(base_path, link)
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
         }
@@ -45,11 +53,13 @@ def test_about_page_links():
 
 
 def test_writing_page_links():
-    base_url = 'https://anupam.de/writing/'
-    test_page_url = urljoin(base_url, 'writing.html')
+    writing_path = '/writing/writing.html'
+    base_path = get_base_url() + writing_path
+    test_page_url = urljoin(base_path, writing_path)
+    print(f"Testing writing page links at {test_page_url}")
     test_links = get_test_links(test_page_url)
     for link in test_links:
-        url = urljoin(base_url, link)
+        url = urljoin(base_path, link)
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
         }
@@ -58,11 +68,13 @@ def test_writing_page_links():
 
 
 def test_projects_page_links():
-    base_url = 'https://anupam.de/projects/'
-    test_page_url = urljoin(base_url, 'projects.html')
+    projects_path = '/projects/projects.html'
+    base_path = get_base_url() + projects_path
+    test_page_url = urljoin(base_path, projects_path)
+    print(f"Testing projects page links at {test_page_url}")
     test_links = get_test_links(test_page_url)
     for link in test_links:
-        url = urljoin(base_url, link)
+        url = urljoin(base_path, link)
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
         }
@@ -71,11 +83,14 @@ def test_projects_page_links():
 
 
 def test_descriptify_home_page_links():
-    base_url = 'https://anupam.de/projects/descriptify/descriptify.html'
-    test_page_url = base_url
+    descriptify_path = '/projects/descriptify/descriptify.html'
+    base_path = get_base_url() + descriptify_path
+    test_page_url = urljoin(base_path, descriptify_path)
+    print(f"Testing descriptify home page links at {test_page_url}")
     test_links = get_test_links(test_page_url)
+    print("test_links", test_links)
     for link in test_links:
-        url = urljoin(base_url, link)
+        url = urljoin(base_path, link)
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
         }
