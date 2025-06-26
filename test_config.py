@@ -6,6 +6,6 @@ ENVIRONMENT = os.environ.get("ENVIRONMENT", "local")
 
 # Get URLs from environment variables
 baseURLs = {
-    "local": os.environ.get("LOCAL_URL", "http://localhost:8000"),
+    "local": os.environ.get("LOCAL_URL", "http://localhost:5500"),
     "prod": os.environ.get("PROD_URL", "https://anupam.de")
 }
