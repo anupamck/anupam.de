@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="{{ base_path }}/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anupam Krishnamurthy | {{ title }}</title>
+</head>
+
+<body>
+  {% if section == 'now' %}
+  <a><h1>Anupam Krishnamurthy</h1></a>
+  {% else %}
+  <a href="{{ base_path }}/"><h1>Anupam Krishnamurthy</h1></a>
+  {% endif %}
+  <div class="wrapper">
+    <nav id="sidebar">
+      {% if section == 'now' %}<a>now</a>{% else %}<a href="{{ base_path }}/">now</a>{% endif %}
+      {% if section == 'writing' %}<a>writing</a>{% else %}<a href="{{ base_path }}/writing/writing.html">writing</a>{% endif %}
+      {% if section == 'projects' %}<a>projects</a>{% else %}<a href="{{ base_path }}/projects/projects.html">projects</a>{% endif %}
+      {% if section == 'about' %}<a>about</a>{% else %}<a href="{{ base_path }}/about/about.html">about</a>{% endif %}
+    </nav>
+    <section class="main">
+      {% block main %}{% endblock %}
+    </section>
+  </div>
+</body>
+
+</html>

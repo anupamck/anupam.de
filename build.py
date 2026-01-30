@@ -1,0 +1,156 @@
+#!/usr/bin/env python3
+"""
+Static site generator: content (Markdown + JSON) + Jinja2 templates -> HTML.
+Output goes to _site/. Copy style.css and images/ there; deploy _site/.
+
+Preview locally: python build.py --serve
+"""
+
+import argparse
+import http.server
+import json
+import os
+import re
+import shutil
+import socketserver
+import webbrowser
+from pathlib import Path
+
+import markdown
+import yaml
+from jinja2 import Environment, FileSystemLoader
+
+ROOT = Path(__file__).resolve().parent
+CONTENT_DIR = ROOT / "content"
+TEMPLATES_DIR = ROOT / "templates"
+OUT_DIR = ROOT / "_site"
+STATIC_SOURCES = ["style.css", "images"]
+
+
+def base_path_from_output_path(output_rel: str) -> str:
+    """Relative path from output file to site root, for links and CSS."""
+    parts = Path(output_rel).parent.parts
+    if not parts or parts == ("."):
+        return "."
+    return "/".join(".." for _ in parts)
+
+
+def copy_static():
+    """Copy style.css and images/ into _site/."""
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    for name in STATIC_SOURCES:
+        src = ROOT / name
+        if not src.exists():
+            continue
+        dst = OUT_DIR / name
+        if src.is_file():
+            shutil.copy2(src, dst)
+        else:
+            shutil.copytree(src, dst, dirs_exist_ok=True)
+
+
+def load_md(path: Path) -> str:
+    """Read Markdown file and return HTML body."""
+    text = path.read_text(encoding="utf-8")
+    return markdown.markdown(text, extensions=["extra"])
+
+
+def load_md_with_frontmatter(path: Path):
+    """Read Markdown file with YAML front matter, return (frontmatter_dict, html_body)."""
+    text = path.read_text(encoding="utf-8")
+    if text.startswith("---\n"):
+        parts = text.split("---\n", 2)
+        if len(parts) >= 3:
+            frontmatter = yaml.safe_load(parts[1])
+            body = parts[2]
+            return frontmatter or {}, markdown.markdown(body, extensions=["extra"])
+    # No front matter, return empty dict and full markdown
+    return {}, markdown.markdown(text, extensions=["extra"])
+
+
+def get_jinja_env():
+    env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
+    return env
+
+
+def build_about(env: Environment):
+    """Render About page from content/about.md."""
+    about_md = CONTENT_DIR / "about.md"
+    if not about_md.exists():
+        return
+    main_html = load_md(about_md)
+    out_rel = "about/about.html"
+    (OUT_DIR / "about").mkdir(parents=True, exist_ok=True)
+    template = env.get_template("about.html")
+    html = template.render(
+        title="About",
+        section="about",
+        base_path=base_path_from_output_path(out_rel),
+        main_html=main_html,
+    )
+    (OUT_DIR / out_rel).write_text(html, encoding="utf-8")
+    print(f"  {out_rel}")
+
+
+def build_essays(env: Environment):
+    """Render all essays from content/essays/*.md."""
+    essays_dir = CONTENT_DIR / "essays"
+    if not essays_dir.exists():
+        return
+    template = env.get_template("essay.html")
+    for md_file in essays_dir.glob("*.md"):
+        frontmatter, content_html = load_md_with_frontmatter(md_file)
+        title = frontmatter.get("title", md_file.stem.replace("_", " ").title())
+        date = frontmatter.get("date", "")
+        slug = md_file.stem
+        out_rel = f"writing/essays/{slug}.html"
+        (OUT_DIR / "writing" / "essays").mkdir(parents=True, exist_ok=True)
+        html = template.render(
+            title=title,
+            date=date,
+            section="writing",
+            base_path=base_path_from_output_path(out_rel),
+            content_html=content_html,
+        )
+        (OUT_DIR / out_rel).write_text(html, encoding="utf-8")
+        print(f"  {out_rel}")
+
+
+def run_build(env: Environment):
+    """Run the full build (static + all pages)."""
+    copy_static()
+    build_about(env)
+    build_essays(env)
+
+
+def serve(port: int = 8000):
+    """Serve _site/ at http://127.0.0.1:port/ and open in browser."""
+    if not OUT_DIR.exists():
+        print("_site/ not found. Run build first.")
+        return
+    os.chdir(OUT_DIR)
+    handler = http.server.SimpleHTTPRequestHandler
+    with socketserver.TCPServer(("", port), handler) as httpd:
+        url = f"http://127.0.0.1:{port}/"
+        print(f"Serving at {url}  (Ctrl+C to stop)")
+        webbrowser.open(url)
+        httpd.serve_forever()
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Build static site into _site/")
+    parser.add_argument("--serve", action="store_true", help="Build, then serve _site/ locally and open in browser")
+    parser.add_argument("--port", type=int, default=8000, help="Port for --serve (default: 8000)")
+    args = parser.parse_args()
+
+    print("Building site -> _site/")
+    env = get_jinja_env()
+    run_build(env)
+    print("Done.")
+
+    if args.serve:
+        serve(args.port)
+
+
+if __name__ == "__main__":
+    main()

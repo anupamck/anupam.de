@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block main %}
+<h2>{{ title }}</h2>
+<span class="date">{{ date }}</span>
+{{ content_html | safe }}
+{% endblock %}
