@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block main %}
+{% if projects %}
+  {% for project in projects %}
+    <section class="project">
+      <div class="projectInfo">
+        <span class="projectTitle">{{ project.title }}</span>
+        <div class="projectDate">{{ project.date }}</div>
+        {% if project.url and project.image %}
+          {% if project.url.startswith("http") %}
+            <a href="{{ project.url }}">
+              <img class="projectPic" src="{{ base_path }}/{{ project.image }}" alt="{{ project.image_alt or project.title }}">
+            </a>
+          {% else %}
+            <a href="{{ base_path }}/{{ project.url }}">
+              <img class="projectPic" src="{{ base_path }}/{{ project.image }}" alt="{{ project.image_alt or project.title }}">
+            </a>
+          {% endif %}
+        {% elif project.image %}
+          <img class="projectPic" src="{{ base_path }}/{{ project.image }}" alt="{{ project.image_alt or project.title }}">
+        {% endif %}
+        {% if project.description_html %}
+          <div class="projectDescription">{{ project.description_html | safe }}</div>
+        {% endif %}
+      </div>
+    </section>
+  {% endfor %}
+{% else %}
+  {{ main_html | safe }}
+{% endif %}
+{% endblock %}

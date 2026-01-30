@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parent
 CONTENT_DIR = ROOT / "content"
 TEMPLATES_DIR = ROOT / "templates"
 OUT_DIR = ROOT / "_site"
-STATIC_SOURCES = ["style.css", "images", "writing"]
+STATIC_SOURCES = ["style.css", "images", "writing", "projects"]
 
 
 def base_path_from_output_path(output_rel: str) -> str:
@@ -88,6 +88,33 @@ def build_about(env: Environment):
         base_path=base_path_from_output_path(out_rel),
         main_html=main_html,
     )
+    (OUT_DIR / out_rel).write_text(html, encoding="utf-8")
+    print(f"  {out_rel}")
+
+
+def build_projects(env: Environment):
+    """Render Projects page from content/projects.yaml."""
+    projects_yaml = CONTENT_DIR / "projects.yaml"
+    out_rel = "projects/projects.html"
+    (OUT_DIR / "projects").mkdir(parents=True, exist_ok=True)
+    template = env.get_template("projects.html")
+    base_path = base_path_from_output_path(out_rel)
+
+    if not projects_yaml.exists():
+        return
+
+    data = yaml.safe_load(projects_yaml.read_text(encoding="utf-8")) or {}
+    projects = data.get("projects", [])
+    for project in projects:
+        description = project.get("description", "")
+        project["description_html"] = markdown.markdown(description, extensions=["extra"])
+    html = template.render(
+        title="Projects",
+        section="projects",
+        base_path=base_path,
+        projects=projects,
+    )
+
     (OUT_DIR / out_rel).write_text(html, encoding="utf-8")
     print(f"  {out_rel}")
 
@@ -157,6 +184,7 @@ def run_build(env: Environment):
     """Run the full build (static + all pages)."""
     copy_static()
     build_about(env)
+    build_projects(env)
     build_essays(env)
     build_poetry(env)
     build_writing_index(env)
