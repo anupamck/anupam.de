@@ -3,6 +3,14 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 import test_config
 
+# URLs containing any of these substrings are skipped (e.g. sites that block bots).
+LINK_EXCLUSIONS = ["medium.com"]
+
+
+def should_skip_link(absolute_url: str) -> bool:
+    """True if the URL is on the exclusion list and should not be checked."""
+    return any(exc in absolute_url for exc in LINK_EXCLUSIONS)
+
 
 def get_test_links(url):
     response = requests.get(url)
@@ -29,6 +37,8 @@ def test_home_page_links():
     test_links = get_test_links(test_page_url)
     for link in test_links:
         url = urljoin(base_path, link)
+        if should_skip_link(url):
+            continue
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
         }
@@ -44,6 +54,8 @@ def test_about_page_links():
     test_links = get_test_links(test_page_url)
     for link in test_links:
         url = urljoin(base_path, link)
+        if should_skip_link(url):
+            continue
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
         }
@@ -60,6 +72,8 @@ def test_writing_page_links():
     test_links = get_test_links(test_page_url)
     for link in test_links:
         url = urljoin(base_path, link)
+        if should_skip_link(url):
+            continue
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
         }
@@ -75,6 +89,8 @@ def test_projects_page_links():
     test_links = get_test_links(test_page_url)
     for link in test_links:
         url = urljoin(base_path, link)
+        if should_skip_link(url):
+            continue
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
         }
@@ -90,6 +106,8 @@ def test_descriptify_home_page_links():
     test_links = get_test_links(test_page_url)
     for link in test_links:
         url = urljoin(base_path, link)
+        if should_skip_link(url):
+            continue
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
         }
