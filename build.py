@@ -73,6 +73,33 @@ def get_jinja_env():
     return env
 
 
+def build_now(env: Environment):
+    """Render homepage from content/now.yaml."""
+    now_yaml = CONTENT_DIR / "now.yaml"
+    if not now_yaml.exists():
+        return
+    data = yaml.safe_load(now_yaml.read_text(encoding="utf-8")) or {}
+    sections = data.get("sections", [])
+    for section in sections:
+        content = section.get("content", "")
+        section["content_html"] = markdown.markdown(content, extensions=["extra"])
+    out_rel = "index.html"
+    template = env.get_template("now.html")
+    html = template.render(
+        title="Now",
+        section="now",
+        base_path=base_path_from_output_path(out_rel),
+        profile_image=data.get("profile_image", "images/nowPic.jpeg"),
+        profile_alt=data.get("profile_alt", ""),
+        updates=data.get("updates", []),
+        updated=data.get("updated", ""),
+        sections=sections,
+    )
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    (OUT_DIR / out_rel).write_text(html, encoding="utf-8")
+    print(f"  {out_rel}")
+
+
 def build_about(env: Environment):
     """Render About page from content/about.md."""
     about_md = CONTENT_DIR / "about.md"
@@ -183,6 +210,7 @@ def build_writing_index(env: Environment):
 def run_build(env: Environment):
     """Run the full build (static + all pages)."""
     copy_static()
+    build_now(env)
     build_about(env)
     build_projects(env)
     build_essays(env)
