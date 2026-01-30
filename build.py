@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parent
 CONTENT_DIR = ROOT / "content"
 TEMPLATES_DIR = ROOT / "templates"
 OUT_DIR = ROOT / "_site"
-STATIC_SOURCES = ["style.css", "images"]
+STATIC_SOURCES = ["style.css", "images", "writing"]
 
 
 def base_path_from_output_path(output_rel: str) -> str:
@@ -116,11 +116,34 @@ def build_essays(env: Environment):
         print(f"  {out_rel}")
 
 
+def build_writing_index(env: Environment):
+    """Render writing/writing.html from content/writing.yaml."""
+    writing_yaml = CONTENT_DIR / "writing.yaml"
+    if not writing_yaml.exists():
+        return
+
+    data = yaml.safe_load(writing_yaml.read_text(encoding="utf-8")) or {}
+    out_rel = "writing/writing.html"
+    (OUT_DIR / "writing").mkdir(parents=True, exist_ok=True)
+
+    template = env.get_template("writing.html")
+    html = template.render(
+        title="Writing",
+        section="writing",
+        base_path=base_path_from_output_path(out_rel),
+        daily_blog=data.get("daily_blog", {}),
+        sections=data.get("sections", []),
+    )
+    (OUT_DIR / out_rel).write_text(html, encoding="utf-8")
+    print(f"  {out_rel}")
+
+
 def run_build(env: Environment):
     """Run the full build (static + all pages)."""
     copy_static()
     build_about(env)
     build_essays(env)
+    build_writing_index(env)
 
 
 def serve(port: int = 8000):

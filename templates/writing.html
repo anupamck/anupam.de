@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block main %}
+  <h3 class="separator">Daily Blog</h3>
+  <p>
+    {{ daily_blog.text }}
+    <a href="{{ daily_blog.url }}">here</a>.
+  </p>
+
+  {% for section in sections %}
+    <h3 class="separator">{{ section["title"] }}</h3>
+    {% for item in section["items"] %}
+      <section class="datedRow">
+        <div class="link">
+          <a href="{{ item["href"] }}">{{ item["title"] }}</a>
+        </div>
+        <div class="date">{{ item["date"] }}</div>
+      </section>
+    {% endfor %}
+  {% endfor %}
+{% endblock %}
+
