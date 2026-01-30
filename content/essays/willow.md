@@ -1,0 +1,65 @@
+---
+title: "Willow"
+date: "Jul 2023"
+---
+
+<p>
+  One consequence of living abroad while having friends and family who are scattered around
+  the world is that you tend to fall out of touch. It also doesn't help that I don't use much social media.
+</p>
+<p>
+  To solve this problem, I built a simple tool that serves only two purposes:
+<ul>
+  <li>reminding me to get in touch with people I have not spoken to in a while</li>
+  <li>maintaining notes of past conversations</li>
+</ul>
+I call it <a href="https://willowdb.net">Willow</a>.
+</p>
+<h3>What's under the hood?</h3>
+<p>
+  Willow employs Flask, a simple Python web framework, and is completely server-side rendered.
+  Contacts and interactions are stored in simple SQLite databases. On the front-end, I use HTML
+  templating with Jinja2, which ships with Flask. The styling is all CSS. The app is hosted on
+  Hetzner Cloud. I used pytest for unit tests and Playwright for website tests. You can check out the source code
+  <a href="https://github.com/anupamck/willow">here</a>.
+</p>
+<h3>What did the process look like?</h3>
+<p>
+  Building the app was a great learning experience. It started as a suggestion from a friend, who had built
+  a similar app for his own use. To start with, I used <a href="https://www.appsmith.com/">Appsmith</a>, a low
+  code
+  front-end builder to build a working prototype.
+</p>
+<p>
+  I then started building the app out using Flask and a lot of help from ChatGPT. Initial progress
+  was rapid, but I soon had to resort to hacks that I was ashamed off. I then realized that I needed
+  some code refactoring. When I tried to write some unit tests, I realized that my code wasn't modular
+  enough to test properly.
+</p>
+<p>
+  I started off with some website tests using Playwright and used them as a basis for refactoring my code.
+  I was then able to write unit tests as well. I then proceeded from hurdle to hurdle - from authentication to
+  database to server deployment. All of this was new to me, so I ended up learning a tonne of stuff.
+</p>
+<p>
+  I improved the application in iterations until it had all the features I really wanted. It now has user
+  registration, responsive design and password reset. I hereby consider this project
+  shipped. Feel free to try it out!
+</p>
+<h3>What all did I learn?</h3>
+<ul>
+  <li>Building a dynamic web application from scratch</li>
+  <li>How to use Flask to setup a backend server</li>
+  <li>Databases (MySQL and SQLite)</li>
+  <li>Unit testing with extensive mocks</li>
+  <li>Encrypting credentials and user authentication</li>
+  <li>Hosting on Hetzner Cloud with Nginx & Gunicorn</li>
+  <li>Responsive design with CSS</li>
+  <li>Password reset via short-lived tokens</li>
+  <li>The merit of using an object oriented design</li>
+  <li>How ChatGPT and Github Co-Pilot are paradigm changing tools</li>
+</ul>
+<hr>
+<p>
+  A special thanks to my friend, Neil Fernandes, for inspiring this project.
+</p>
