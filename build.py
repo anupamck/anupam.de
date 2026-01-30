@@ -92,19 +92,24 @@ def build_about(env: Environment):
     print(f"  {out_rel}")
 
 
-def build_essays(env: Environment):
-    """Render all essays from content/essays/*.md."""
-    essays_dir = CONTENT_DIR / "essays"
-    if not essays_dir.exists():
+def build_collection(
+    env: Environment,
+    content_subdir: str,
+    template_name: str,
+    out_subdir: str,
+):
+    """Render a content collection from content/<subdir>/*.md."""
+    content_dir = CONTENT_DIR / content_subdir
+    if not content_dir.exists():
         return
-    template = env.get_template("essay.html")
-    for md_file in essays_dir.glob("*.md"):
+    template = env.get_template(template_name)
+    for md_file in content_dir.glob("*.md"):
         frontmatter, content_html = load_md_with_frontmatter(md_file)
         title = frontmatter.get("title", md_file.stem.replace("_", " ").title())
         date = frontmatter.get("date", "")
         slug = md_file.stem
-        out_rel = f"writing/essays/{slug}.html"
-        (OUT_DIR / "writing" / "essays").mkdir(parents=True, exist_ok=True)
+        out_rel = f"writing/{out_subdir}/{slug}.html"
+        (OUT_DIR / "writing" / out_subdir).mkdir(parents=True, exist_ok=True)
         html = template.render(
             title=title,
             date=date,
@@ -114,6 +119,16 @@ def build_essays(env: Environment):
         )
         (OUT_DIR / out_rel).write_text(html, encoding="utf-8")
         print(f"  {out_rel}")
+
+
+def build_essays(env: Environment):
+    """Render all essays from content/essays/*.md."""
+    build_collection(env, "essays", "essay.html", "essays")
+
+
+def build_poetry(env: Environment):
+    """Render all poems from content/poetry/*.md."""
+    build_collection(env, "poetry", "poem.html", "poetry")
 
 
 def build_writing_index(env: Environment):
@@ -143,6 +158,7 @@ def run_build(env: Environment):
     copy_static()
     build_about(env)
     build_essays(env)
+    build_poetry(env)
     build_writing_index(env)
 
 
