@@ -39,8 +39,10 @@ The site was refactored from hand-written HTML to a Python static site generator
 
 ## Quick reference
 
-| Task                  | Command                   |
-| --------------------- | ------------------------- |
-| Build                 | `python build.py`         |
-| Build + local preview | `python build.py --serve` |
+| Task                  | Command                           |
+| --------------------- | --------------------------------- |
+| Build                 | `python build.py`                 |
+| Build + local preview | `python build.py --serve`         |
+| Install               | `pip install -r requirements.txt` |
+
 

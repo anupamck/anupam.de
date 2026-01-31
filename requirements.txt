@@ -1,12 +1,7 @@
-# Build (static site generator)
-Jinja2==3.1.6
-Markdown==3.10.1
-PyYAML==6.0.3
+# Build + test dependencies (local development). CI uses requirements.txt only.
+-r requirements-ci.txt
 
-# Jinja2 dependency
-MarkupSafe==3.0.3
-
-# Testing (pytest and dependencies)
+# Testing
 pytest==9.0.2
 iniconfig==2.3.0
 packaging==26.0

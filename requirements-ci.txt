@@ -1,0 +1,5 @@
+# Build only (CI and production). For local dev + tests use requirements.txt
+Jinja2==3.1.6
+Markdown==3.10.1
+PyYAML==6.0.3
+MarkupSafe==3.0.3
