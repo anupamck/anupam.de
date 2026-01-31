@@ -8,9 +8,7 @@ Preview locally: python build.py --serve
 
 import argparse
 import http.server
-import json
 import os
-import re
 import shutil
 import socketserver
 import webbrowser
