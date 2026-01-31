@@ -1,3 +1,14 @@
-markdown>=3.5
-Jinja2>=3.1
-PyYAML>=6.0
+# Build (static site generator)
+Jinja2==3.1.6
+Markdown==3.10.1
+PyYAML==6.0.3
+
+# Jinja2 dependency
+MarkupSafe==3.0.3
+
+# Testing (pytest and dependencies)
+pytest==9.0.2
+iniconfig==2.3.0
+packaging==26.0
+pluggy==1.6.0
+Pygments==2.19.2
