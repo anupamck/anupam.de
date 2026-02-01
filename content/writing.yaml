@@ -5,6 +5,9 @@ daily_blog:
 sections:
   - title: "Essays and Posts"
     items:
+      - title: "The courage to criticise"
+        href: "essays/courageToCriticise.html"
+        date: "Feb-2026"
       - title: "From MBA to software development"
         href: "essays/fromMBAtoSoftwareDev.html"
         date: "Nov-2023"
