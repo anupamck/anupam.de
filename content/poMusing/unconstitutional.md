@@ -1,0 +1,23 @@
+---
+title: "Unconstitutional?"
+date: "Aug 2011"
+---
+
+There has been a lot of outrage on the part of the intellectuals of this country that the present India Against Corruption movement has been unconstitutional. However, as a [friend](http://www.facebook.com/profile.php?id=605616517) rightly pointed out,  
+
+> "There are many political parties that conduct bandhs, hartals, dharnas, padayatras and what not on a regular basis. Offices are shut down, stones are pelted at buses, tyres are burnt. Anyone who goes on the streets are wounded too. However, the same political parties say that a peaceful, non-violent, non-disruptive, perfectly legal protest is undemocratic?"
+
+  
+The Constitution of India is the supreme law of India, whose principles are to be followed for framing of laws, policies, granting of rights, and the functioning of the state. Like any other legal document, it can prove quite hard to read. The principles enshrined, however, are simpler to understand. Only the intellectual population of the country pays heed to even these. Hence, only a very small population of the country actually knows what is constitutional and what is unconstitutional.  
+  
+Having read the speeches that Dr BR Ambedkar made on drafting of the constitution, I know that he would have surely struck down this protest as unconstitutional. I agree. This protest has been unconstitutional. However, let me tell you that if Dr Ambedkar were alive today, he would have been baffled enough at the rampant corruption that the parliament is responsible for today to immediately recommend some amendments to curtail the powers that the Legislature possess.  
+  
+The legislature towers high above any other institution in this country. They seem to be able to call all the shots at present: How to obtain arrests of anybody (by using the Delhi Police as a scapegoat) in case anything goes wrong? How many Jan Lokpal bills to consider? Whether they should present bills to the standing committee? Whether the bill should undergo the process of voting in the parliament at all? (Whoa!)  
+  
+I'd say that any constitution that has allowed for the parliament to thrive in such unfettered corruption definitely needs a re-look. (There! I've uttered a blasphemy). I'm sure that the founding fathers of the country would never have, even in their wildest dreams, envisaged the whole sale sell out of the country that is happening today. Why, A Raja might have made only a few hundred crores out of the deal, but has cost the country a potential whopping 1.76 lakh crores. Ethics apart, costing the country so dearly for making only a fraction of that cost is bad business!  
+  
+We need laws to reign in the MPs today. The constitution has been amended in their favour so much so that they are the ultimate authority in this country. The laws against corruption, and their punishments are so ridiculous, particularly in light of the powers that MPs have. Also, these laws are so replete with loopholes that one can slither his way out easily with the legal expertise that the ministers have at hand, what with many of them being lawyers themselves.  
+  
+The people on the streets have seen this happening time and again. They know that any political party that comes into power in steeped in the same systemic corruption. They do not care about the word of the constitution at this point of time. They just see that the country is being looted and want changes now! In their anger, they aren't ready to wait for a decade for palpable change to happen. Hence, they jump the gun on many occasions and demand the passage of their bill outright. It is true that anger clouds our ability to make the best decisions. It is also true that for this anger, the politicians are to blame and they are now facing the music.  
+  
+As Arvind Khejriwal pointed out, intellectuals abound in the country, who think about how to proceed on every matter and are quick in their criticism of anything that goes against the grain of the many principles they hold dear. However, the vast numbers of people in this country operate on something much more basic: Common Sense. They don't want to hear your explanations of what is constitutional and what is not. They want corruption rooted out, and they want it now. The intellectuals are very relevant though. They keep checks and balances in the system so that things don't get out of hand. This movement has been a refreshing attempt at a correction of the Indian democracy. Rather than saying that Indian democracy is being threatened, it is good to see it thriving as ever.

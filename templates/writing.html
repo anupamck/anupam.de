@@ -3,7 +3,7 @@
   <h3 class="separator">Daily Blog</h3>
   <p>
     {{ daily_blog.text }}
-    <a href="{{ daily_blog.url }}">here</a>.
+    <a href="{{ daily_blog.url }}">{{ daily_blog.link_text }}</a>.
   </p>
 
   {% if older_blogs %}
@@ -11,7 +11,7 @@
     {% for blog in older_blogs %}
       <p>
         {{ blog.text }}
-        <a href="{{ blog.url }}">here</a>.
+        <a href="{{ blog.url }}">{{ blog.link_text }}</a>.
       </p>
     {% endfor %}
   {% endif %}
