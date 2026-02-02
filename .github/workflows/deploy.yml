@@ -26,6 +26,9 @@ jobs:
       - name: Build site
         run: python build.py
 
+      - name: Run tests
+        run: pytest tests/ -v
+
       - name: Deploy to Hostinger (FTP)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
