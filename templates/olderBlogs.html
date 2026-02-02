@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block main %}
+  <h2>{{ heading }}</h2>
+
+  {% for collection in collections %}
+    <h3 class="separator">{{ collection.heading }}</h3>
+    {% for item in collection.entries %}
+      <section class="datedRow">
+        <div class="link">
+          <a href="{{ item["href"] }}">{{ item["title"] }}</a>
+        </div>
+        {% if item.get("date") %}<div class="date">{{ item["date"] }}</div>{% endif %}
+      </section>
+    {% endfor %}
+  {% endfor %}
+{% endblock %}

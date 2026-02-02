@@ -183,6 +183,47 @@ def build_poetry(env: Environment):
     build_collection(env, "poetry", "poem.html", "poetry")
 
 
+def build_older_blogs(env: Environment):
+    """Render all legacy blog posts (Pom-Musings, Sculptures in Sand)."""
+    # Pom-Musings
+    build_collection(env, "poMusing", "essay.html", "poMusing")
+    # Sculptures in Sand
+    build_collection(env, "sculpturesInSand", "essay.html", "sculpturesInSand")
+
+
+def build_combined_older_blogs_page(env: Environment):
+    """Render a single Older Blogs page from poMusing.yaml and sculpturesInSand.yaml.
+    """
+    collections = []
+    for yaml_name, heading in [
+        ("sculpturesInSand.yaml", "Sculptures in Sand"),
+        ("poMusing.yaml", "Pom-Musings"),
+    ]:
+        index_yaml = CONTENT_DIR / yaml_name
+        if not index_yaml.exists():
+            continue
+        data = yaml.safe_load(index_yaml.read_text(encoding="utf-8")) or {}
+        items = data.get("items", [])
+        if items:
+            collections.append({"heading": heading, "entries": items})
+
+    if not collections:
+        return
+
+    out_rel = "writing/olderBlogs.html"
+    (OUT_DIR / "writing").mkdir(parents=True, exist_ok=True)
+    template = env.get_template("olderBlogs.html")
+    html = template.render(
+        title="Older Blogs",
+        heading="Older Blogs",
+        section="writing",
+        base_path=base_path_from_output_path(out_rel),
+        collections=collections,
+    )
+    (OUT_DIR / out_rel).write_text(html, encoding="utf-8")
+    print(f"  {out_rel}")
+
+
 def build_writing_index(env: Environment):
     """Render writing/writing.html from content/writing.yaml."""
     writing_yaml = CONTENT_DIR / "writing.yaml"
@@ -199,6 +240,7 @@ def build_writing_index(env: Environment):
         section="writing",
         base_path=base_path_from_output_path(out_rel),
         daily_blog=data.get("daily_blog", {}),
+        older_blogs=data.get("older_blogs", []),
         sections=data.get("sections", []),
     )
     (OUT_DIR / out_rel).write_text(html, encoding="utf-8")
@@ -213,6 +255,8 @@ def run_build(env: Environment):
     build_projects(env)
     build_essays(env)
     build_poetry(env)
+    build_older_blogs(env)
+    build_combined_older_blogs_page(env)
     build_writing_index(env)
 
 

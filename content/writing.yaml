@@ -2,6 +2,10 @@ daily_blog:
   text: "I have blogged everyday from January 22, 2018 to March 01, 2023. You can read my blogposts"
   url: "https://anupamobserved.com"
 
+older_blogs:
+  - text: "Before that, I wrote at my older blogs Pom-Musings and Sculptures in Sand. You can find those posts"
+    url: "olderBlogs.html"
+
 sections:
   - title: "Essays and Posts"
     items:

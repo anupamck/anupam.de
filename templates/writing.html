@@ -6,6 +6,16 @@
     <a href="{{ daily_blog.url }}">here</a>.
   </p>
 
+  {% if older_blogs %}
+    <h3 class="separator">Older blogs</h3>
+    {% for blog in older_blogs %}
+      <p>
+        {{ blog.text }}
+        <a href="{{ blog.url }}">here</a>.
+      </p>
+    {% endfor %}
+  {% endif %}
+
   {% for section in sections %}
     <h3 class="separator">{{ section["title"] }}</h3>
     {% for item in section["items"] %}
@@ -13,7 +23,7 @@
         <div class="link">
           <a href="{{ item["href"] }}">{{ item["title"] }}</a>
         </div>
-        <div class="date">{{ item["date"] }}</div>
+        {% if item.get("date") %}<div class="date">{{ item["date"] }}</div>{% endif %}
       </section>
     {% endfor %}
   {% endfor %}

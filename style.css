@@ -103,14 +103,25 @@ section.project {
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
 }
 
-section.datedRow p {
+/* section.datedRow p {
   padding: 5px;
   width: 40em;
-}
+} */
 
 section.datedRow {
+  min-width: 30em;
+  margin-bottom: var(--space-3xs);
   display: flex;
   justify-content: space-between;
+}
+
+section.datedRow .link {
+  flex: 1 1 auto;
+  line-height: 1.4em; /* Tighter line spacing for wrapped titles */
+}
+
+section.datedRow .link a {
+  line-height: inherit; /* Inherit the tighter spacing */
 }
 
 div.date {
