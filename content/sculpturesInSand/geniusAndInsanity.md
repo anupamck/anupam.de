@@ -1,0 +1,24 @@
+---
+title: "Genius and Insanity"
+date: "Oct 2017"
+---
+
+_There's a fine line between genius and insanity. I have erased this line._  
+_  
+_ The quote above belongs to Oscar Levant, an American pianist, comedian and writer. The quote is arguably more famous than the rest of Levant's work, and its first part has been used innumerable times since. This link is rather easy to notice when we examine the personal lives of some of the most creative geniuses have confronted insanity either in the form of drugs or depression - Vincent Van Gogh, Virginia Woolf, Jimi Hendrix and Robin Williams are names that come all too easily to my head.  
+  
+However, this marriage between prodigal creativity and life-long struggles with physical and mental illness makes for an unsteady concoction. It is easy to come across comments that look at this combination and lead people to discredit, in some measure, the quality and import that the work of an artist carries.  
+  
+"What is the point of all of his creative genius, if he had to battle chronic depression and addition all his life?"  
+  
+"We must be guarded from heeding the advice that she gives. After all, she killed herself."  
+  
+There is another angle to examine here, and we shall do that after a short, but relevant digression.  
+  
+Nathaniel Ayers was an African American musician who was trained in the prestigious Juilliard school of music in New York, but was roaming the streets of LA as a homeless person. His musical career was tragically cut short by a constant battle with schizophrenia. Nathaniel was playing on the streets of LA with a violin with just two strings, when his talent was recognized by a New York time columnist, Steve Lopez. This eventually led to a movie being made on his life - The Soloist. One incident in Nathaniel's life involved Robert Gupta, a violinist in the LA Philharmonic, who was giving Nathaniel a music lesson. Before they could commence, he saw a glint in Nathaniel's eye and observed that he was staring vacantly into a faraway space - he was having an attack. Nathaniel was known to react violently during his schizophrenic attacks and he refused treatment because of a history of traumatic incidents involving shock therapy. Robert was at a fix as to what he could do at that moment. He picked up his violin and started playing a movement from a Beethoven composition. As he bowed the violin, he noticed calmness return gradually to Nathaniel's eyes. Nathaniel then picked up his own violin and started playing a wide range of pieces from memory, spanning several artists. Robert Gupta's [TED talk](https://www.ted.com/talks/robert_gupta) is a brilliant five minute summary of this incident, where he concludes that music was Nathaniel's solace - a channel through which he could transmute the thoughts and illusions that tortured his mind into mellifluous music in the real world.  
+  
+Maria Popova, the prolific writer of Brain Pickings, [argues this point rather convincingly](https://tim.blog/2015/07/24/maria-popova-starting-a-successful-blog/), in relation to cynical criticisms directed at troubled artists. She opines that these artists who suffered, no doubt, would have only suffered more, but for their artistic expression. In that sense, their art is what salvaged their life and gave it meaning. She points out that there are so many people suffering from mental illness that have not created the Starry Night.  
+  
+"Van Gogh's art did not take his life, it redeemed it. Without it he would have just been an average, unkempt, mentally ill man, who died miserable in a small village. With it, he was able to experience moments of transcendent joy and meaning, which also happened to produce some of the greatest and most lasting works of art of all time."  
+  
+While all the examples presented here are extreme and anecdotal, the true relationship between creativity and mental illness is far more complex than a couple of arguments that can be made using mere conjecture. (Maria herself points out to that [here](https://www.brainpickings.org/2014/07/21/creativity-and-mental-illness/)). Nevertheless, I find myself agreeing with Maria's assertion that art and creative expression saved artistic geniuses from insanity to the extent that it salvaged and added meaning to their otherwise miserable lives. Their art led their lives to be a beacon that spans across the annals of time and reaches us, rather than a candle's flicker that insignificantly dies out. There is, therefore, vastly more that we can learn from the lives and messages of artistic geniuses than cynics would have us believe.
