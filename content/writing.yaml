@@ -3,97 +3,97 @@ daily_blog:
   link_text: here
   url: https://anupamobserved.com
 older_blogs:
-- text: Eons ago, right back to when I was in university, I wrote in older blogs. If you want to have a good laugh at my expense, find them
-  link_text: here
-  url: olderBlogs.html
+  - text: Eons ago, right back to when I was in university, I wrote in older blogs. If you want to have a good laugh at my expense, find them
+    link_text: here
+    url: olderBlogs.html
 sections:
-- title: Essays and Posts
-  items:
-  - title: The courage to criticise
-    href: essays/courageToCriticise.html
-    date: Feb 2026
-  - title: From MBA to software development
-    href: essays/fromMBAtoSoftwareDev.html
-    date: Nov 2023
-  - title: How do you tame an external API that constantly breaks your tests?
-    href: essays/howYouTameAnExternalAPI.html
-    date: Oct 2023
-  - title: Willow
-    href: essays/willow.html
-    date: Aug 2023
-  - title: 10 days in silence
-    href: essays/10DaysInSilence.html
-    date: Mar 2023
-  - title: WeAreDevelopers 2022 - My 3 highlights
-    href: essays/WAD2022.html
-    date: Jul 2022
-  - title: Why you should read 'The Unicorn Project'
-    href: essays/theUnicornProject.html
-    date: May 2022
-  - title: How this website was born
-    href: essays/howThisSiteWasBorn.html
-    date: Nov 2021
-  - title: What writing 1000 blogposts has taught me
-    href: essays/what1000BlogpostsTaughtMe.html
-    date: Oct 2020
-  - title: The tyranny of progress
-    href: essays/tyrannyOfProgress.html
-    date: Feb 2020
-  - title: How to make your writing more persuasive
-    href: https://medium.com/@anupamck/how-to-make-your-writing-more-persuasive-9c42a5e87f5f?sk=390df5d370cef555675dc11833299a38
-    date: Feb 2019
-  - title: What writers can learn from software development
-    href: https://writingcooperative.com/what-writers-can-learn-from-software-development-c393fc0b866a
-    date: Nov 2018
-  - title: Separate your writing from your editing
-    href: essays/separateYourWritingFromYourEditing.html
-    date: Oct 2018
-  - title: The process of giving it your best shot
-    href: essays/theProcessOfGivingItYourBestShot.html
-    date: May 2018
-- title: Short Stories
-  items:
-  - title: Satkar Lodge
-    href: shortstories/satkarLodge.html
-    date: May 2018
-  - title: The driver guide's folly
-    href: shortstories/driverGuidesFolly.html
-    date: Nov 2017
-  - title: The complaint box
-    href: shortstories/complaintBox.html
-    date: Sep 2017
-  - title: Shades of corruption
-    href: poMusing/shadesOfCorruption.html
-    date: Mar 2015
-  - title: The leak in the pipeline
-    href: shortstories/theLeakInThePipeline.html
-    date: Mar 2014
-- title: Poetry
-  items:
-  - title: To give up. To let go.
-    href: poetry/toGiveUpToLetGo.html
-    date: Jan 2023
-  - title: Breath
-    href: poetry/breath.html
-    date: Nov 2022
-  - title: The piece of sweet
-    href: poetry/thePieceOfSweet.html
-    date: Nov 2021
-  - title: Nature's Whisper
-    href: poetry/naturesWhisper.html
-    date: Aug 2021
-  - title: Be yourself?
-    href: poetry/beYourself.html
-    date: Jan 2021
-  - title: Identity
-    href: poetry/identity.html
-    date: Nov 2020
-  - title: To meditate
-    href: poetry/toMeditate.html
-    date: Feb 2020
-  - title: Like trees in a forest
-    href: poetry/likeTreesInAForest.html
-    date: Jul 2018
-  - title: Growing Up
-    href: poMusing/growingUp.html
-    date: Nov 2017
+  - title: Essays and Posts
+    items:
+      - title: The courage to criticise
+        href: essays/courageToCriticise.html
+        date: Feb 2026
+      - title: From MBA to software development
+        href: essays/fromMBAtoSoftwareDev.html
+        date: Nov 2023
+      - title: How do you tame an external API that constantly breaks your tests?
+        href: essays/howYouTameAnExternalAPI.html
+        date: Oct 2023
+      - title: Willow
+        href: essays/willow.html
+        date: Aug 2023
+      - title: 10 days in silence
+        href: essays/10DaysInSilence.html
+        date: Mar 2023
+      - title: WeAreDevelopers 2022 - My 3 highlights
+        href: essays/WAD2022.html
+        date: Jul 2022
+      - title: Why you should read 'The Unicorn Project'
+        href: essays/theUnicornProject.html
+        date: May 2022
+      - title: How this website was born
+        href: essays/howThisSiteWasBorn.html
+        date: Nov 2021
+      - title: What writing 1000 blogposts has taught me
+        href: essays/what1000BlogpostsTaughtMe.html
+        date: Oct 2020
+      - title: The tyranny of progress
+        href: essays/tyrannyOfProgress.html
+        date: Feb 2020
+      - title: How to make your writing more persuasive
+        href: essays/howToMakeYourWritingMorePersuasive.html
+        date: Feb 2019
+      - title: What writers can learn from software development
+        href: https://writingcooperative.com/what-writers-can-learn-from-software-development-c393fc0b866a
+        date: Nov 2018
+      - title: Separate your writing from your editing
+        href: essays/separateYourWritingFromYourEditing.html
+        date: Oct 2018
+      - title: The process of giving it your best shot
+        href: essays/theProcessOfGivingItYourBestShot.html
+        date: May 2018
+  - title: Short Stories
+    items:
+      - title: Satkar Lodge
+        href: shortstories/satkarLodge.html
+        date: May 2018
+      - title: The driver guide's folly
+        href: shortstories/driverGuidesFolly.html
+        date: Nov 2017
+      - title: The complaint box
+        href: shortstories/complaintBox.html
+        date: Sep 2017
+      - title: Shades of corruption
+        href: poMusing/shadesOfCorruption.html
+        date: Mar 2015
+      - title: The leak in the pipeline
+        href: shortstories/theLeakInThePipeline.html
+        date: Mar 2014
+  - title: Poetry
+    items:
+      - title: To give up. To let go.
+        href: poetry/toGiveUpToLetGo.html
+        date: Jan 2023
+      - title: Breath
+        href: poetry/breath.html
+        date: Nov 2022
+      - title: The piece of sweet
+        href: poetry/thePieceOfSweet.html
+        date: Nov 2021
+      - title: Nature's Whisper
+        href: poetry/naturesWhisper.html
+        date: Aug 2021
+      - title: Be yourself?
+        href: poetry/beYourself.html
+        date: Jan 2021
+      - title: Identity
+        href: poetry/identity.html
+        date: Nov 2020
+      - title: To meditate
+        href: poetry/toMeditate.html
+        date: Feb 2020
+      - title: Like trees in a forest
+        href: poetry/likeTreesInAForest.html
+        date: Jul 2018
+      - title: Growing Up
+        href: poMusing/growingUp.html
+        date: Nov 2017
