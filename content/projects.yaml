@@ -4,7 +4,7 @@ projects:
     url: "https://beyondquality.org"
     image: "images/beyondQuality.jpeg"
     image_alt: "Logo of the Beyond Quality podcast"
-    description: "A collaborative research community focused on advancing software quality practices, with its own podcast!"
+    description: "A collaborative research community focused on advancing software quality practices, with its own [podcast](https://open.spotify.com/show/2JaVYJgv2aqFuV0HOQ8DXv)!"
   - title: "Willow"
     date: "July 2023 - November 2023"
     url: "https://willowdb.net"
