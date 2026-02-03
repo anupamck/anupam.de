@@ -19,7 +19,7 @@ The higher the wave of our expectation, the greater our risk of sustaining injur
 
 Is there a way out of this predicament? Is there a means to cushion the risk of disappointment while following a goal-oriented approach?
 
-### An ancient Hindu text seems to offer an answer
+## An ancient Hindu text seems to offer an answer
 
 One of the most frequently cited portions of the Bhagavad Gita is…
 
@@ -43,7 +43,7 @@ Having established that giving something our best shot is the overarching goal, 
   2. **Execute the process:** Once the process is defined, execute it without exceptions. The idea is to do the process repeatedly until it becomes an automatic action — a habit.
   3. **Refine the process:** Refinement is the act of gathering feedback periodically from your execution and making changes to the process.
 
-### The bottom line
+## The bottom line
 
 Goal orientation is a great approach for motivating ourselves to set and achieve lofty goals. However, goal orientation comes with the risk of disappointment in case we do not achieve our goals. Given that the intended outcomes for several of our goals are not within our own control, we need to cushion goal orientation with a process — one that helps us give a particular goal our best, realistic shot.
 
