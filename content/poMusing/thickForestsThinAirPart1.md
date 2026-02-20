@@ -226,11 +226,3 @@ Photo credits go to Chinmaya and Dadhies.
   
 
 The [next part](../poMusing/thickForestsThinAirPart2.html) of this post will detail how Sar Pass was passed through and later happenings.
-
-  
-
-For more pics of the trek, especially the birdlife, see
-
-  
-
-_[https://www.facebook.com/media/set/?set=a.174480839274608.43203.100001380800740&l=df227072f3](https://www.facebook.com/media/set/?set=a.174480839274608.43203.100001380800740&l=df227072f3)_
