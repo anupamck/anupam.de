@@ -3,9 +3,7 @@ title: "Thick Forests, Thin Air Part 2"
 date: "May 2011"
 ---
 
-Part 1 can be found here: <http://pomusing.blogspot.com/2011/05/expedition-sar-pass-13800-ft-4200-m.html>
-
-  
+Part 1 can be found [here](../poMusing/thickForestsThinAirPart1.html).
 
 **A Note on Signal Catching:**
 

@@ -225,7 +225,7 @@ Photo credits go to Chinmaya and Dadhies.
 
   
 
-The next part of this post will detail how Sar Pass was passed through and later happenings.
+The [next part](../poMusing/thickForestsThinAirPart2.html) of this post will detail how Sar Pass was passed through and later happenings.
 
   
 
