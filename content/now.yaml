@@ -18,19 +18,9 @@ updates:
     text: "projects | Willow"
     date: "Jul 2023"
 
-updated: "1 February, 2026"
+updated: "14 April, 2026"
 
 sections:
-  - title: "Website overhaul"
+  - title: "A new role"
     content: |
-      When I created this website, I wrote all the html by hand. While this was a great learning experience, it added a lot of friction to updating the site and 
-      writing new articles. So I refactored the site to use a simple static site generation script. My articles are now written in Markdown,
-      lists and tables are made with yaml, and the build script converts them to html using Jinja2 templates. The best part? All of this took merely one morning 
-      with Cursor! It would have taken me a week to do manually. You can check out the source code [here](https://github.com/anupamck/anupam.de).
-  - title: "Workshop and Talk on LLM testing"
-    content: |
-      I will be speaking at [TestAutomationDays 2026](https://www.testautomationdays.com/) in the Netherlands. My talk will feature a live demo of testing an LLM, while I'll host a hands-on workshop on building 
-      your own RAG (Retrieval-Augmented Generation) pipeline with Langchain and testing it with Ragas.
-  - title: "Workcation in Sicily"
-    content: |
-      The wife and I are headed to Sicily for a week in the middle of  February.
+      From April 2026, I have suspended my freelancing practice and started a new role as Head of AI Testing at [TestSolutions GmbH](https://testsolutions.de/en/focus/ai-testing). We are building AI testing capabilities ground-up, so that we can offer our clients the latest and the greatest in this rapidly developing field.  

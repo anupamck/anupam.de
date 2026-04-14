@@ -1,6 +1,6 @@
 I grew up in Bangalore and currently live in Berlin, Germany. This website houses my select creations on the World Wide Web.
 
-I am a manager turned software developer. I work as a freelance test automation consultant. I make sure that my clients' automated tests are set up to minimize quality risks and maximize business value. You can find out more about my work at [my professional website](https://anukrit.de/), or at [LinkedIn](https://www.linkedin.com/in/anupam-krishnamurthy/).
+I am a manager turned software developer. I work the Head of AI Testing at TestSolutions GmbH. As quality engineers, I make sure that we bring the same rigour to testing AI based applications as we have to good old deterministic software. I have previously worked as a freelance test automation consultant, a management consultant and a satellite integration engineer. You can find out more about my work at [my professional website](https://anukrit.de/), or at [LinkedIn](https://www.linkedin.com/in/anupam-krishnamurthy/).
 
 I use the following 4 principles to choose what I work on:
 
