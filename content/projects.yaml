@@ -7,7 +7,6 @@ projects:
     description: "A collaborative research community focused on advancing software quality practices, with its own [podcast](https://open.spotify.com/show/2JaVYJgv2aqFuV0HOQ8DXv)!"
   - title: "Willow"
     date: "July 2023 - November 2023"
-    url: "https://willowdb.net"
     image: "images/willow.png"
     image_alt: "Willow screenshot"
     description: "Application to help keep in touch with people. Details [here](../writing/essays/willow.html)."
