@@ -13,7 +13,7 @@ date: "Jul 2023"
   <li>reminding me to get in touch with people I have not spoken to in a while</li>
   <li>maintaining notes of past conversations</li>
 </ul>
-I call it <a href="https://willowdb.net">Willow</a>.
+I call it Willow</a>.
 </p>
 <h3>What's under the hood?</h3>
 <p>
@@ -44,7 +44,7 @@ I call it <a href="https://willowdb.net">Willow</a>.
 <p>
   I improved the application in iterations until it had all the features I really wanted. It now has user
   registration, responsive design and password reset. I hereby consider this project
-  shipped. Feel free to try it out!
+  shipped. 
 </p>
 <h3>What all did I learn?</h3>
 <ul>
@@ -59,7 +59,12 @@ I call it <a href="https://willowdb.net">Willow</a>.
   <li>The merit of using an object oriented design</li>
   <li>How ChatGPT and Github Co-Pilot are paradigm changing tools</li>
 </ul>
+<p><em>Update: Willow was retired on 26 April 2026.</em></p>
 <hr>
 <p>
   A special thanks to my friend, Neil Fernandes, for inspiring this project.
 </p>
+<p>
+<b>Note:</b>In June 2026, I retired this project.
+</p>
+

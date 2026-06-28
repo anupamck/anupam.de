@@ -18,9 +18,15 @@ updates:
     text: "projects | Willow"
     date: "Jul 2023"
 
-updated: "14 April, 2026"
+updated: "28 June, 2026"
 
 sections:
+  - title: "LLM-Judge as a calibrated instrument"
+    content: |
+      In my AI Testing role, I have been deeply pondering the topic of using an [LLM-Judge as a calibrated instrument for continuous improvement](https://github.com/BeyondQuality/beyondquality/discussions/40). I have spoken about this at EuroSTAR 2026 and German Testing Day. 
+  - title: "Some strength training"
+    content: |
+      I started some strength training late last year. I've learnt the basics, and have a steady and somewhat relaxed routine. Strength training doesn't come to me as naturally as running does, but it is gradually growing on me. I do some weight training along with [BODYPUMP](https://www.lesmills.com/workouts/bodypump).
   - title: "A new role"
     content: |
       From April 2026, I have suspended my freelancing practice and started a new role as Head of AI Testing at [TestSolutions GmbH](https://testsolutions.de/en/focus/ai-testing). We are building AI testing capabilities ground-up, so that we can offer our clients the latest and the greatest in this rapidly developing field.  
