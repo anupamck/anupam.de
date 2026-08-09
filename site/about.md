@@ -14,7 +14,7 @@ I use the following 4 principles to choose what I work on:
 In my free time, you'll find me engrossed in a game of online chess, running long distances with a
 History podcast, or curled up in a corner with a book.
 
-My wife and I have signed the [10% pledge at Giving What We Can](https://www.givingwhatwecan.org/pledge). We donate 10% of our income towards charity and for causes we hold dear. 
+My wife and I have signed the [10% pledge at Giving What We Can](https://www.givingwhatwecan.org/pledge). Since 2023, we have donated 10% of our income towards charity and for causes we hold dear. 
 
 You can write to me at [anupam.ck@gmail.com](mailto:anupam.ck@gmail.com). Send me a bug
 or two from this website to embarrass me.
