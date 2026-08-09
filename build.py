@@ -53,17 +53,18 @@ def load_md(path: Path) -> str:
     return markdown.markdown(text, extensions=["extra"])
 
 
-def load_md_with_frontmatter(path: Path):
+def load_md_with_frontmatter(path: Path, extensions=None):
     """Read Markdown file with YAML front matter, return (frontmatter_dict, html_body)."""
+    extensions = extensions or ["extra"]
     text = path.read_text(encoding="utf-8")
     if text.startswith("---\n"):
         parts = text.split("---\n", 2)
         if len(parts) >= 3:
             frontmatter = yaml.safe_load(parts[1])
             body = parts[2]
-            return frontmatter or {}, markdown.markdown(body, extensions=["extra"])
+            return frontmatter or {}, markdown.markdown(body, extensions=extensions)
     # No front matter, return empty dict and full markdown
-    return {}, markdown.markdown(text, extensions=["extra"])
+    return {}, markdown.markdown(text, extensions=extensions)
 
 
 def get_jinja_env():
@@ -149,6 +150,7 @@ def build_collection(
     content_subdir: str,
     template_name: str,
     out_subdir: str,
+    md_extensions=None,
 ):
     """Render a content collection from content/<subdir>/*.md."""
     content_dir = CONTENT_DIR / content_subdir
@@ -156,7 +158,7 @@ def build_collection(
         return
     template = env.get_template(template_name)
     for md_file in content_dir.glob("*.md"):
-        frontmatter, content_html = load_md_with_frontmatter(md_file)
+        frontmatter, content_html = load_md_with_frontmatter(md_file, extensions=md_extensions)
         title = frontmatter.get("title", md_file.stem.replace("_", " ").title())
         date = frontmatter.get("date", "")
         slug = md_file.stem
@@ -180,7 +182,7 @@ def build_essays(env: Environment):
 
 def build_poetry(env: Environment):
     """Render all poems from content/poetry/*.md."""
-    build_collection(env, "poetry", "poem.html", "poetry")
+    build_collection(env, "poetry", "poem.html", "poetry", md_extensions=["extra", "nl2br"])
 
 
 def build_older_blogs(env: Environment):
