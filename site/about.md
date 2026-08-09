@@ -1,5 +1,5 @@
-I grew up in Bangalore and currently live in Berlin, Germany. This website houses my select creations on the World Wide Web.
 
+I grew up in Bangalore and currently live in Berlin, Germany. This website houses my select creations on the World Wide Web.
 I am a manager turned software developer. I work the Head of AI Testing at TestSolutions GmbH. As quality engineers, I make sure that we bring the same rigour to testing AI based applications as we have to good old deterministic software. I have previously worked as a freelance test automation consultant, a management consultant and a satellite integration engineer. You can find out more about my work at [my professional website](https://anukrit.de/), or at [LinkedIn](https://www.linkedin.com/in/anupam-krishnamurthy/).
 
 I use the following 4 principles to choose what I work on:
@@ -13,6 +13,8 @@ I use the following 4 principles to choose what I work on:
 
 In my free time, you'll find me engrossed in a game of online chess, running long distances with a
 History podcast, or curled up in a corner with a book.
+
+My wife and I have signed the [10% pledge at Giving What We Can](https://www.givingwhatwecan.org/pledge). We donate 10% of our income towards charity and for causes we hold dear. 
 
 You can write to me at [anupam.ck@gmail.com](mailto:anupam.ck@gmail.com). Send me a bug
 or two from this website to embarrass me.
