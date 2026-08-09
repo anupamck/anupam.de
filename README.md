@@ -16,26 +16,28 @@ The site was refactored from hand-written HTML to a Python static site generator
 
 ## How it works
 
-- **Content** (`content/`) – Markdown (with optional YAML front matter) and YAML data files.
+- **Content** (`writing/`) – Markdown (with optional YAML front matter) and YAML data files. This is the only place to edit.
 - **Templates** (`templates/`) – Jinja2 base layout and page templates; `base_path` keeps nav and assets correct at any depth.
 - **Build** – `python build.py` copies static assets into `_site/`, then renders each page. `python build.py --serve` builds and serves locally.
 
 ## What is generated vs legacy
 
-**Generated from content/templates:**
+**Generated from writing/templates:**
 
-- **Homepage** – `content/now.yaml` + `templates/now.html` → `_site/index.html`
-- **About** – `content/about.md` → `_site/about/about.html`
-- **Projects** – `content/projects.yaml` → `_site/projects/projects.html`
-- **Writing index** – `content/writing.yaml` → `_site/writing/writing.html`
-- **Essays** – each `content/essays/*.md` → `_site/writing/essays/<slug>.html`
-- **Poetry (migrated)** – each `content/poetry/*.md` → `_site/writing/poetry/<slug>.html` (only `growingUp` so far)
+- **Homepage** – `writing/now.yaml` + `templates/now.html` → `_site/index.html`
+- **About** – `writing/about.md` → `_site/about/about.html`
+- **Projects** – `writing/projects.yaml` → `_site/projects/projects.html`
+- **Writing index** – `writing/writing.yaml` → `_site/writing/writing.html`
+- **Essays** – each `writing/essays/*.md` → `_site/writing/essays/<slug>.html`
+- **Poetry** – each `writing/poetry/*.md` → `_site/writing/poetry/<slug>.html`
+- **Short stories** – each `writing/shortstories/*.md` → `_site/writing/shortstories/<slug>.html`
+- **Older blogs (Pom-Musings, Sculptures in Sand)** – `writing/poMusing/*.md` and `writing/sculpturesInSand/*.md` → `_site/writing/{poMusing,sculpturesInSand}/<slug>.html`
 
 **Still legacy (HTML copied as static):**
 
-- **Poetry** – Most poems are still in `writing/poetry/*.html` and are **copied** into `_site/writing/poetry/`. Only items with a matching `content/poetry/*.md` are built; the rest stay as legacy HTML.
-- **Short stories** – `writing/shortstories/*.html` are copied as-is; no Markdown migration yet.
 - **Descriptify** – `projects/descriptify/` is copied as static HTML and linked from the projects page.
+
+Non-Markdown assets referenced from content (images, audio) live in top-level `images/` and `audio/` folders and are copied into `_site/` as static sources.
 
 ## Quick reference
 

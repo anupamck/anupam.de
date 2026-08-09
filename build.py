@@ -19,10 +19,10 @@ import yaml
 from jinja2 import Environment, FileSystemLoader
 
 ROOT = Path(__file__).resolve().parent
-CONTENT_DIR = ROOT / "content"
+CONTENT_DIR = ROOT / "writing"
 TEMPLATES_DIR = ROOT / "templates"
 OUT_DIR = ROOT / "_site"
-STATIC_SOURCES = ["style.css", "images", "writing", "projects"]
+STATIC_SOURCES = ["style.css", "images", "audio", "projects"]
 
 
 def base_path_from_output_path(output_rel: str) -> str:
@@ -73,7 +73,7 @@ def get_jinja_env():
 
 
 def build_now(env: Environment):
-    """Render homepage from content/now.yaml."""
+    """Render homepage from writing/now.yaml."""
     now_yaml = CONTENT_DIR / "now.yaml"
     if not now_yaml.exists():
         return
@@ -100,7 +100,7 @@ def build_now(env: Environment):
 
 
 def build_about(env: Environment):
-    """Render About page from content/about.md."""
+    """Render About page from writing/about.md."""
     about_md = CONTENT_DIR / "about.md"
     if not about_md.exists():
         return
@@ -119,7 +119,7 @@ def build_about(env: Environment):
 
 
 def build_projects(env: Environment):
-    """Render Projects page from content/projects.yaml."""
+    """Render Projects page from writing/projects.yaml."""
     projects_yaml = CONTENT_DIR / "projects.yaml"
     out_rel = "projects/projects.html"
     (OUT_DIR / "projects").mkdir(parents=True, exist_ok=True)
@@ -152,7 +152,7 @@ def build_collection(
     out_subdir: str,
     md_extensions=None,
 ):
-    """Render a content collection from content/<subdir>/*.md."""
+    """Render a content collection from writing/<subdir>/*.md."""
     content_dir = CONTENT_DIR / content_subdir
     if not content_dir.exists():
         return
@@ -176,13 +176,18 @@ def build_collection(
 
 
 def build_essays(env: Environment):
-    """Render all essays from content/essays/*.md."""
+    """Render all essays from writing/essays/*.md."""
     build_collection(env, "essays", "essay.html", "essays")
 
 
 def build_poetry(env: Environment):
-    """Render all poems from content/poetry/*.md."""
+    """Render all poems from writing/poetry/*.md."""
     build_collection(env, "poetry", "poem.html", "poetry", md_extensions=["extra", "nl2br"])
+
+
+def build_shortstories(env: Environment):
+    """Render all short stories from writing/shortstories/*.md."""
+    build_collection(env, "shortstories", "essay.html", "shortstories")
 
 
 def build_older_blogs(env: Environment):
@@ -227,7 +232,7 @@ def build_combined_older_blogs_page(env: Environment):
 
 
 def build_writing_index(env: Environment):
-    """Render writing/writing.html from content/writing.yaml."""
+    """Render writing/writing.html from writing/writing.yaml."""
     writing_yaml = CONTENT_DIR / "writing.yaml"
     if not writing_yaml.exists():
         return
@@ -257,6 +262,7 @@ def run_build(env: Environment):
     build_projects(env)
     build_essays(env)
     build_poetry(env)
+    build_shortstories(env)
     build_older_blogs(env)
     build_combined_older_blogs_page(env)
     build_writing_index(env)

@@ -133,11 +133,11 @@ div.date {
   text-decoration: line-through;
 }
 
-span.verse {
+div.verse {
   font-style: italic;
 }
 
-span.heading {
+div.heading {
   font-weight: bold;
 }
 
