@@ -16,22 +16,22 @@ The site was refactored from hand-written HTML to a Python static site generator
 
 ## How it works
 
-- **Content** (`writing/`) – Markdown (with optional YAML front matter) and YAML data files. This is the only place to edit.
+- **Content** (`site/`) – Markdown (with optional YAML front matter) and YAML data files. This is the only place to edit.
 - **Templates** (`templates/`) – Jinja2 base layout and page templates; `base_path` keeps nav and assets correct at any depth.
 - **Build** – `python build.py` copies static assets into `_site/`, then renders each page. `python build.py --serve` builds and serves locally.
 
 ## What is generated vs legacy
 
-**Generated from writing/templates:**
+**Generated from site/templates:**
 
-- **Homepage** – `writing/now.yaml` + `templates/now.html` → `_site/index.html`
-- **About** – `writing/about.md` → `_site/about/about.html`
-- **Projects** – `writing/projects.yaml` → `_site/projects/projects.html`
-- **Writing index** – `writing/writing.yaml` → `_site/writing/writing.html`
-- **Essays** – each `writing/essays/*.md` → `_site/writing/essays/<slug>.html`
-- **Poetry** – each `writing/poetry/*.md` → `_site/writing/poetry/<slug>.html`
-- **Short stories** – each `writing/shortstories/*.md` → `_site/writing/shortstories/<slug>.html`
-- **Older blogs (Pom-Musings, Sculptures in Sand)** – `writing/poMusing/*.md` and `writing/sculpturesInSand/*.md` → `_site/writing/{poMusing,sculpturesInSand}/<slug>.html`
+- **Homepage** – `site/now.yaml` + `templates/now.html` → `_site/index.html`
+- **About** – `site/about.md` → `_site/about/about.html`
+- **Projects** – `site/projects.yaml` → `_site/projects/projects.html`
+- **Writing index** – `site/writing.yaml` → `_site/writing/writing.html`
+- **Essays** – each `site/essays/*.md` → `_site/writing/essays/<slug>.html`
+- **Poetry** – each `site/poetry/*.md` → `_site/writing/poetry/<slug>.html`
+- **Short stories** – each `site/shortstories/*.md` → `_site/writing/shortstories/<slug>.html`
+- **Older blogs (Pom-Musings, Sculptures in Sand)** – `site/poMusing/*.md` and `site/sculpturesInSand/*.md` → `_site/writing/{poMusing,sculpturesInSand}/<slug>.html`
 
 **Still legacy (HTML copied as static):**
 
