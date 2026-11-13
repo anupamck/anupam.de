@@ -9,6 +9,9 @@ older_blogs:
 sections:
 - title: Essays and Posts
   items:
+  - title: Will AI end sloppy testing?
+    href: essays/AIEndsSloppyTesting.html
+    date: Nov 2026
   - title: The courage to criticise
     href: essays/courageToCriticise.html
     date: Feb 2026
